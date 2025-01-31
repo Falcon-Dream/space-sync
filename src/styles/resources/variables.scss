@@ -1,0 +1,62 @@
+/* ---- Variables ---- */
+/* -- Colors -- */
+$white-1: #fff;
+$gray-1: #f5f6fa;
+$gray-2: #f9f9f9;
+$gray-3: #b8bac1;
+$gray-4: #999;
+$gray-5: #ecedf0;
+
+$black-1: #232323;
+$red-color: #ff0050;
+
+$theme-color: #f6110f; //
+// $theme-color: purple;
+$background-color: $white-1;
+$text-color: $black-1;
+
+/* -- Typography -- */
+$font-family: "Montserrat", sans-serif;
+$font-weight: 400;
+$font-size: 22px;
+$font-color: $black-1;
+
+$h1-font-size: 54px;
+$h2-font-size: 36px;
+$h3-font-size: 24px;
+$h4-font-size: 18px;
+
+/* -- Transition -- */
+$transition-property: all;
+$transition-delay: 0.2s;
+$transition-timing: ease;
+
+/* -- Link -- */
+$link-hover-opacity: 0.7;
+
+/* -- Media Query Breakpoints -- */
+$phone: 480;
+$phablet: 576;
+$tablet: 768;
+$tablet-large: 992;
+$laptop: 1200;
+$desktop: 1400;
+
+$burger-point: 1240;
+
+/* -- Container -- */
+$container-default-width: 1350px;
+$container-desktop-gutter: 80;
+$container-laptop-gutter: 50;
+$container-tablet-large-gutter: 32;
+$container-tablet-gutter: 28;
+$container-phablet-gutter: 24;
+
+/* -- Gutters -- */
+$header-padding-desktop-gutter: 15px;
+$header-padding-tablet-large-gutter: 10px;
+$header-padding-tablet-gutter: 10px;
+$header-padding-phablet-gutter: 10px;
+
+$section-gutter: 100px;
+$scroll-margin-top: $section-gutter + $header-padding-tablet-gutter * 2;
