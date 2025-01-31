@@ -17,7 +17,6 @@ const withPWA = nextPWA({
 
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true,
   images: { domains: ["localhost", process.env.DOMAIN] },
   env: {
     API_URL: process.env.API_URL,
