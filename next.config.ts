@@ -27,7 +27,7 @@ const nextConfig = {
     EMAIL: process.env.EMAIL,
     DOMAIN: process.env.DOMAIN,
   },
-  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+  webpack: (config: any, { buildId, dev, isServer, defaultLoaders }: any) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@styles": resolve(__dirname, "src/styles"),
