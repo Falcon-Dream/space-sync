@@ -1,0 +1,24 @@
+/* ---- Functions ---- */
+/* -- Percent -- */
+@function percent($px, $from) {
+    $result: math.div($px, $from) * 100%;
+    @return $result;
+}
+
+/* -- Rem -- */
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+    @return $result;
+}
+
+/* -- Em -- */
+@function em($px, $current: 16) {
+    $result: math.div($px, $current) + em;
+    @return $result;
+}
+
+/* -- Hex Opacity -- */
+@function hex-opacity($hex, $opacity) {
+    $result: rgba($hex, $opacity);
+    @return $result;
+}

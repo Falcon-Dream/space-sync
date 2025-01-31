@@ -1,0 +1,1 @@
+Ping File for check internet connection.

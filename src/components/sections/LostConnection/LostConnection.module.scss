@@ -1,0 +1,24 @@
+@import "@resources";
+
+.wrapper {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.title {
+    @include font-size(60px);
+    color: $theme-color;
+    margin-bottom: 25px;
+
+    @include mq($phone) {
+        @include font-size(40px);
+    }
+}
+
+.description {
+    @include font-size(40px);
+
+    @include mq($phone) {
+        @include font-size(20px);
+    }
+}
