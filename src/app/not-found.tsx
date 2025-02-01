@@ -2,7 +2,7 @@ import NotFound from "@components/sections/NotFound/NotFound";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Не найдено",
+    title: "404",
 };
 
 const NotFoundPage = () => {

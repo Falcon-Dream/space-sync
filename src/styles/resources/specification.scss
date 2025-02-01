@@ -1,42 +1,56 @@
 /* ---- Specification ---- */
 * {
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    margin: 0;
-    padding: 0px;
-    scroll-margin-top: $scroll-margin-top;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0px;
+  scroll-margin-top: $scroll-margin-top;
 
-    @include mq($phablet) {
-        scroll-margin-top: 100px;
-    }
+  @include mq($phablet) {
+    scroll-margin-top: 100px;
+  }
+
+  cursor: url("/cursors/pointer.cur"), auto !important;
 }
 
 body,
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    @include reset-indents();
-    background: $background-color;
-    @include font-size($font-size);
-    font-weight: $font-weight;
-    color: $font-color;
-    overflow-x: hidden;
-    padding-right: 0 !important;
+  @include reset-indents();
+  background: $background-color;
+  @include font-size($font-size);
+  font-weight: $font-weight;
+  color: $font-color;
+  overflow-x: hidden;
+  padding-right: 0 !important;
 }
 
 section {
-    padding-bottom: $section-gutter;
+  padding-bottom: $section-gutter;
 
-    @include mq($tablet-large) {
-        padding-bottom: 80px;
-    }
+  @include mq($tablet-large) {
+    padding-bottom: 80px;
+  }
 
-    @include mq($phone) {
-        padding-bottom: 64px;
-    }
+  @include mq($phone) {
+    padding-bottom: 64px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  display: inline-block;
+  cursor: url("/cursors/beam.cur"), text !important;
 }
 
 h1,
@@ -45,292 +59,237 @@ h3,
 h4,
 h5,
 h6 {
-    @include reset-indents();
+  @include reset-indents();
 }
 
 h1,
 h2 {
-    font-weight: 600;
-    text-transform: uppercase;
+  font-weight: 600;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 h1 {
-    @include font-size($h1-font-size);
+  @include font-size($h1-font-size);
 
-    @include mq($tablet-large) {
-        @include font-size(46px);
-    }
+  @include mq($tablet-large) {
+    @include font-size(46px);
+  }
 }
 
 h2 {
-    @include font-size($h2-font-size);
+  @include font-size($h2-font-size);
 
-    @include mq($tablet-large) {
-        @include font-size(24px);
-    }
+  @include mq($tablet-large) {
+    @include font-size(24px);
+  }
 
-    @include mq($tablet) {
-        @include font-size(20px);
-    }
+  @include mq($tablet) {
+    @include font-size(20px);
+  }
 }
 
 h3 {
-    @include font-size($h3-font-size);
+  @include font-size($h3-font-size);
 }
 
 h4 {
-    @include font-size($h4-font-size);
+  @include font-size($h4-font-size);
 }
 
 p {
-    @include reset-indents();
+  @include reset-indents();
 }
 
 a {
-    @include reset-indents();
-    display: block;
-    color: inherit;
-    text-decoration: none;
+  @include reset-indents();
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 ul,
 li {
-    @include reset-indents();
-    display: block;
+  @include reset-indents();
+  display: block;
 }
 
 img {
-    object-fit: cover;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 input,
 button,
 textarea {
-    font-family: inherit;
-    font-weight: inherit;
-    font-size: inherit;
-    background: none;
-    resize: none;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  background: none;
+  resize: none;
 }
 
 button {
-    &[disabled] {
-        @include transition();
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
-    }
-}
-
-button {
-    border: none;
-    max-width: 400px;
-    padding: 8px 0px;
-    border-radius: 15px;
-    background: $theme-color;
-    @include font-size(22px);
-    font-weight: 600 !important;
-    text-align: center;
-    display: block;
-    border: 2px solid $theme-color;
-    cursor: pointer;
-    color: white;
-    // &:hover {
-    //   border: 2px solid $black-1;
-    //   box-shadow: 0px 10.3077px 32.2115px rgba(0, 0, 0, 0.1);
-    //   transition: 0.3s;
-    // }
-}
-
-.view {
+  &[disabled] {
     @include transition();
-    opacity: 0;
-    position: absolute;
-    left: -100px;
-
+    opacity: 0.5;
+    cursor: default;
     pointer-events: none;
-    visibility: hidden;
-    width: 450px;
-
-    @include mq($laptop) {
-        width: 400px;
-    }
-
-    @include mq($tablet-large) {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    @include mq($phablet) {
-        width: 90%;
-    }
+  }
 }
 
-.viewActive {
-    @include transition();
-    opacity: 1;
-    position: relative;
-    left: 0;
-    pointer-events: visible;
-    visibility: visible;
+button {
+  max-width: 400px;
+  padding: 17px 0px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  @include font-size(24px);
+  font-weight: 600 !important;
+  text-align: center;
+  display: block;
+  border: 2px solid $theme-color;
+  cursor: url("/cursors/link.cur"), pointer;
+  color: $theme-color;
+  // &:hover {
+  //   border: 2px solid $black-1;
+  //   box-shadow: 0px 10.3077px 32.2115px rgba(0, 0, 0, 0.1);
+  //   transition: 0.3s;
+  // }
+}
+
+.pointer {
+  cursor: url("/cursors/link.cur"), pointer !important;
 }
 
 .themeButton {
-    display: inline-block;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: none;
-    z-index: 0;
+  display: inline-block;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: none;
+  z-index: 0;
+  max-width: 400px;
+  padding: 17px 0px;
+  border-radius: 10px;
+  background: rgba(52, 52, 52, 0.2);
+  @include font-size(24px);
+  font-weight: 600 !important;
+  text-align: center;
+  display: block;
+  border: 2px solid $theme-color;
+  cursor: url("/cursors/link.cur"), pointer !important;
+  color: $theme-color;
 
-    &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $theme-color;
-        z-index: -2;
-    }
+  &:hover {
+    background-color: $theme-color;
+    color: $white-1;
+  }
 
-    &:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 100%;
-        background-color: darken($theme-color, 5%);
-        transition: all 0.3s;
-        z-index: -1;
-    }
-
-    &:hover {
-        color: #fff;
-
-        &:before {
-            width: 100%;
-        }
-    }
+  &:active {
+    background-color: rgba(0, 255, 234, 0.3);
+    color: $theme-color;
+  }
 }
 
 input {
+  transition: border 0.3s ease;
+  padding: 13px;
+  background: $gray-1;
+
+  &::placeholder {
+    color: $gray-2;
+  }
+
+  &:focus {
     transition: border 0.3s ease;
-    padding: 13px;
-    background: $gray-1;
-
-    &::placeholder {
-        color: $gray-2;
-    }
-
-    &:focus {
-        transition: border 0.3s ease;
-        border-color: $theme-color;
-    }
+    border-color: $theme-color;
+  }
 }
 
 textarea {
-    transition: border 0.3s ease;
+  transition: border 0.3s ease;
 
-    &:focus {
-        transition: border 0.3s ease;
-        border-color: $theme-color;
-    }
+  &:focus {
+    transition: border 0.3s ease;
+    border-color: $theme-color;
+  }
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* ---- Scroll ---- */
 ::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    background-color: #f5f5f5;
+  width: 5px;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: $theme-color;
+  border-radius: 5px;
+  background-color: $theme-color;
 }
 
 /* ---- Selection ---- */
 ::selection {
-    @include selection();
+  @include selection();
 }
 
 ::-moz-selection {
-    @include selection();
+  @include selection();
 }
 
 .next-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  flex-grow: 1;
 }
 
 .container {
-    @include responsive-container();
+  @include responsive-container();
 }
 
 .lock-scroll {
-    overflow: hidden;
-}
-
-.flare {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 45px;
-    transform: skewX(-45deg); // Наклон
-    animation: flareAnimation;
-    left: -150%;
-    background: linear-gradient(90deg,
-            rgba(255, 255, 255, 0.1),
-            rgba(255, 255, 255, 0.4));
-    animation: flareAnimation 3s infinite linear; // Время и тип анимации можно менять
+  overflow: hidden;
 }
 
 /* ---- Other ---- */
 .swal2-container {
-    font-family: "__Montserrat_5db7e3", sans-serif !important;
+  font-family: "__Montserrat_5db7e3", sans-serif !important;
 }
 
 .swal2-styled.swal2-confirm {
-    border-radius: 0 !important;
-    background-color: $theme-color !important;
+  border-radius: 0 !important;
+  background-color: $theme-color !important;
 }
 
 .swal2-icon.swal2-success .swal2-success-ring {
-    border-color: $theme-color !important;
+  border-color: $theme-color !important;
 }
 
 .swal2-icon.swal2-success [class^="swal2-success-line"][class$="long"],
 .swal2-icon.swal2-success [class^="swal2-success-line"][class$="tip"] {
-    background-color: $theme-color !important;
+  background-color: $theme-color !important;
 }

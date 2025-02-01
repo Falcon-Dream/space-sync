@@ -10,16 +10,20 @@ $gray-5: #ecedf0;
 $black-1: #232323;
 $red-color: #ff0050;
 
-$theme-color: #f6110f; //
+$theme-color: #5edada; //
 // $theme-color: purple;
-$background-color: $white-1;
-$text-color: $black-1;
+$background-color: linear-gradient(
+  180deg,
+  rgba(1, 3, 49, 1) 0%,
+  rgba(2, 3, 20, 1) 100%
+);
+$text-color: $white-1;
 
 /* -- Typography -- */
-$font-family: "Montserrat", sans-serif;
+$font-family: "Exo 2", sans-serif;
 $font-weight: 400;
 $font-size: 22px;
-$font-color: $black-1;
+$font-color: $white-1;
 
 $h1-font-size: 54px;
 $h2-font-size: 36px;
