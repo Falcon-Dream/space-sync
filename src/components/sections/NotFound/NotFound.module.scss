@@ -1,35 +1,44 @@
 @import "@resources";
 
 .wrapper {
-    text-align: center;
-    margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 150px;
 }
 
 .title {
-    @include font-size(160px);
+  @include font-size(160px);
+  color: $theme-color;
 
-    @include mq($phone) {
-        @include font-size(120px);
-    }
+  @include mq($phone) {
+    @include font-size(120px);
+  }
 }
 
 .description {
-    @include font-size(40px);
-
-    @include mq($phone) {
-        @include font-size(16px);
-    }
+  @include font-size(40px);
+  text-align: center;
+  @include mq($phone) {
+    @include font-size(16px);
+  }
 }
 
 .button {
-    width: 500px;
-    margin: 25px auto 0;
+  max-width: 500px;
+  margin: 50px auto 0;
 
-    @include mq($phablet) {
-        width: 100%;
-    }
+  @include mq($tablet-large) {
+    max-width: 300px;
+  }
 
-    @include mq($phone) {
-        @include font-size(16px);
-    }
+  @include mq($phablet) {
+    width: 80%;
+    padding: 10px 0;
+    margin-top: 25px;
+  }
+
+  @include mq($phone) {
+    @include font-size(18px);
+  }
 }

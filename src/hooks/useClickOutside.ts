@@ -1,27 +1,27 @@
 import { useEffect, RefObject } from "react";
 
 const useClickOutside = (
-    ref: RefObject<HTMLElement>,
-    isVisible: boolean,
-    onOutsideClick: () => void
+  ref: RefObject<HTMLElement>,
+  isVisible: boolean,
+  onOutsideClick: () => void
 ) => {
-    useEffect(() => {
-        if (isVisible) {
-            document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [isVisible]);
-
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-        if (ref.current && !ref.current.contains(event.target as Node)) {
-            onOutsideClick();
-        }
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        onOutsideClick();
+      }
     };
+
+    if (isVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isVisible, onOutsideClick, ref]);
 };
 
 export default useClickOutside;

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 import { resolve } from "path";
-import nextPWA from 'next-pwa';
+import nextPWA from "next-pwa";
 
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -20,13 +20,9 @@ const nextConfig = {
   images: { domains: ["localhost", process.env.DOMAIN] },
   env: {
     API_URL: process.env.API_URL,
-    PHONE: process.env.PHONE,
-    TELEGRAM: process.env.TELEGRAM,
-    WHATSAPP: process.env.WHATSAPP,
-    EMAIL: process.env.EMAIL,
     DOMAIN: process.env.DOMAIN,
   },
-  webpack: (config: any, { buildId, dev, isServer, defaultLoaders }: any) => {
+  webpack: (config: any) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@styles": resolve(__dirname, "src/styles"),
