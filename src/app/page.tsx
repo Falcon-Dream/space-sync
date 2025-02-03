@@ -1,13 +1,14 @@
+import Home from "@components/sections/Home/Home";
 import { FC } from "react";
 
-const Home: FC = () => {
+const HomePage: FC = () => {
   return (
-    <div className="next-page">
-      <div className="container">
-        <h1 style={{ marginTop: 50 }}>Page</h1>
+    <>
+      <div className="next-page" data-aos="fade-up">
+        <Home />
       </div>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default HomePage;

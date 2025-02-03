@@ -11,6 +11,7 @@ import { hideLoader } from "@store/slices/loaderSlice";
 import useOnlineStatus from "@hooks/useOnlineStatus";
 import useHasWindow from "@hooks/useHasWindows";
 import LostConnection from "@components/sections/LostConnection/LostConnection";
+import Background from "@components/ui/Background/Background";
 
 type Props = {
   children: ReactNode;
@@ -42,6 +43,7 @@ const Layout: FC<Props> = ({ children }) => {
 
       {isOnline && hasWindow && (
         <>
+          <Background smoke={true} fade={true} />
           <div style={{ flex: "1 0 auto" }}>
             <Header />
             <main>{children}</main>
@@ -50,7 +52,12 @@ const Layout: FC<Props> = ({ children }) => {
         </>
       )}
 
-      {!isOnline && hasWindow && <LostConnection />}
+      {!isOnline && hasWindow && (
+        <>
+          <Background smoke={true} fade={true} />
+          <LostConnection />
+        </>
+      )}
     </div>
   );
 };

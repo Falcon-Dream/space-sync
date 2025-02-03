@@ -171,10 +171,6 @@ button {
   // }
 }
 
-.pointer {
-  cursor: url("/cursors/link.cur"), pointer !important;
-}
-
 .themeButton {
   display: inline-block;
   transition: all 0.3s;
@@ -265,6 +261,13 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   min-height: 100%;
   flex-grow: 1;
+}
+
+.aos-init,
+.next-page,
+.container {
+  position: relative;
+  z-index: 2;
 }
 
 .container {
