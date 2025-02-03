@@ -49,6 +49,12 @@
   background-clip: text;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .text {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.08);
+  }
+}
+
 .icon {
   display: block;
   width: 90px;
