@@ -1,0 +1,32 @@
+/* ---- Background ---- */
+@import "@resources";
+
+.stars {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/background/stars.png") no-repeat center bottom / cover;
+  z-index: 1;
+}
+
+.smoke {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/background/smoke.png") no-repeat center bottom / cover;
+  z-index: 1;
+}
+
+.fade {
+  animation: fadeInOut 5s infinite;
+}
