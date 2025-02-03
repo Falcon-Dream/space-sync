@@ -196,10 +196,10 @@ button {
     color: $white-1;
   }
 
-  &:active {
-    background-color: rgba(0, 255, 234, 0.3);
-    color: $theme-color;
-  }
+  // &:active {
+  //   background-color: rgba(0, 255, 234, 0.3);
+  //   color: $theme-color;
+  // }
 }
 
 input {
