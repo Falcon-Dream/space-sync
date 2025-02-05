@@ -8,6 +8,8 @@ import { FC, ReactNode } from "react";
 import ProviderLayout from "@components/layout/ProviderLayout";
 import getConfig from "../../next-seo.config";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const exo2 = Exo_2({
   subsets: ["latin"],
   display: "swap",
@@ -28,6 +30,7 @@ const RootLayout: FC<Props> = ({ children }) => {
     <html lang="en">
       <body className={exo2.className}>
         <ProviderLayout>{children}</ProviderLayout>
+        <SpeedInsights />
       </body>
     </html>
   );
