@@ -43,16 +43,10 @@
   @include font-size(120px);
   background-color: $theme-color;
   color: transparent;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.08);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-}
-
-@supports (-webkit-touch-callout: none) {
-  .text {
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.08);
-  }
 }
 
 .icon {
