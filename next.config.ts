@@ -17,7 +17,16 @@ const withPWA = nextPWA({
 
 const nextConfig = {
   reactStrictMode: false,
-  images: { domains: ["localhost", process.env.DOMAIN] },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "localhost",
+      },
+      {
+        hostname: process.env.DOMAIN,
+      },
+    ],
+  },
   env: {
     API_URL: process.env.API_URL,
     DOMAIN: process.env.DOMAIN,
