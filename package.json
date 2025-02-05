@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "preinstall": "npm install --platform=linux --arch=x64 --target=20x sharp@0.32.6"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
@@ -21,7 +22,7 @@
     "react-svg-loader": "^3.0.3",
     "rfs": "^10.0.0",
     "sass": "1.63.6",
-    "sharp": "^0.33.5",
+    "sharp": "^0.32.6",
     "sweetalert2": "^11.15.10",
     "swiper": "^11.2.2",
     "usehooks-ts": "^3.1.0"
