@@ -12,6 +12,7 @@ import useOnlineStatus from "@hooks/useOnlineStatus";
 import useHasWindow from "@hooks/useHasWindows";
 import LostConnection from "@components/sections/LostConnection/LostConnection";
 import Background from "@components/ui/Background/Background";
+import { hideSurvey } from "@store/slices/surveySlice";
 
 type Props = {
   children: ReactNode;
@@ -31,6 +32,10 @@ const Layout: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     setTimeout(() => {
+      if (localStorage.getItem("role")) {
+        dispatch(hideSurvey());
+      }
+
       dispatch(hideLoader());
       Aos.init({ duration: 500 });
       window.scrollTo(0, 0);
