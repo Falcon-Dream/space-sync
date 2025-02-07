@@ -1,0 +1,211 @@
+/* ---- Survey ---- */
+@import "@resources";
+
+.role {
+  @include flexible();
+}
+
+.astronaut {
+  @include transition();
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transform: none;
+}
+
+.scientist {
+  @include transition();
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transform: none;
+}
+
+.title {
+  @include transition();
+  @include font-size(115px);
+  text-align: center;
+  text-transform: uppercase;
+  position: fixed;
+  left: 50%;
+  margin-top: 120px;
+  transform: translateX(-50%);
+  z-index: 4;
+
+  @include mq($tablet) {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  @include mq(700) {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}
+
+@include mq($tablet) {
+  .title br {
+    display: none;
+  }
+}
+
+.subtitle {
+  @include transition();
+  @include pointer();
+  @include font-size(35px);
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+}
+
+.astronautImage {
+  @include pointer();
+  position: relative;
+  width: 640px;
+  height: 488px;
+
+  @include mq(1700) {
+    width: 500px;
+    height: 412px;
+  }
+
+  @include mq(1450) {
+    width: 400px;
+    height: 312px;
+  }
+
+  @include mq($laptop) {
+    width: 300px;
+    height: 230px;
+  }
+
+  @include mq($tablet) {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+.scientistImage {
+  @include pointer();
+  position: relative;
+  width: 594px;
+  height: 488px;
+
+  @include mq(1700) {
+    width: 494px;
+    height: 402px;
+  }
+
+  @include mq(1450) {
+    width: 395px;
+    height: 320px;
+  }
+
+  @include mq($laptop) {
+    width: 295px;
+    height: 245px;
+  }
+
+  @include mq($tablet) {
+    width: 195px;
+    height: 168px;
+  }
+}
+
+.hide {
+  @include fade(out);
+  @include mq(700) {
+    display: none;
+  }
+}
+
+.overlay {
+  @include fade(out);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+
+  @include mq(700) {
+    display: none;
+  }
+}
+
+.overlayActive {
+  @include fade(in);
+}
+
+.active {
+  z-index: 4;
+  transform: scale(1.2);
+}
+
+.index {
+  position: relative;
+  z-index: 4;
+}
+
+.button {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+  color: $white-1 !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  text-transform: uppercase;
+
+  @include mq($laptop) {
+    max-width: 250px;
+  }
+
+  @include mq(700) {
+    max-width: 90%;
+    margin: 50px auto 0;
+  }
+}
+
+.astronaut,
+.scientist {
+  @include mq(700) {
+    display: none;
+  }
+}
+
+.title,
+.button {
+  @include mq(700) {
+    position: static;
+    transform: translateX(0);
+  }
+}
+
+.roleCenter {
+  @include mq(700) {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    row-gap: 20px;
+    width: 100%;
+  }
+}
+
+.scientistButton,
+.astronautButton {
+  max-width: 90%;
+  display: none;
+
+  @include mq(700) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.activeButton {
+  background-color: $theme-color;
+  color: $white-1;
+}

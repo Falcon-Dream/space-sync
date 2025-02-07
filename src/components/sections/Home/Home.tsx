@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Home: FC = () => {
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} data-aos="fade-up">
       <div className="container">
         <Navigation />
         <div className={styles.image}>

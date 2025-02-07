@@ -16,6 +16,7 @@ const eslintConfig = [
       eqeqeq: "off",
       "no-unused-vars": "error",
       "prefer-const": ["error", { ignoreReadBeforeAssign: true }],
+      "no-extra-parens": "off",
       "@typescript-eslint/no-explicit-any": "off",
     },
   },

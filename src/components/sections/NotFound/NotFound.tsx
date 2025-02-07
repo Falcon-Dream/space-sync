@@ -9,7 +9,9 @@ const NotFound: FC = () => {
       <h1 className={styles.title}>404</h1>
       <p className={styles.description}>This page does not exists!</p>
       <Link href="/">
-        <button className={`${styles.button} themeButton`}>Back</button>
+        <button type="button" className={`${styles.button} themeButton`}>
+          Back
+        </button>
       </Link>
     </div>
   );
