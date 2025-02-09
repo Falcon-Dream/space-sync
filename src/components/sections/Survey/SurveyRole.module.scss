@@ -1,6 +1,8 @@
 /* ---- Survey ---- */
 @import "@resources";
 
+/* ---- Role ---- */
+
 .role {
   @include flexible();
 }
@@ -116,6 +118,7 @@
 
 .hide {
   @include fade(out);
+
   @include mq(700) {
     display: none;
   }

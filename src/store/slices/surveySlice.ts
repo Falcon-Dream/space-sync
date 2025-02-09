@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface SurveyState {
   isShow: boolean;
+  step: string;
 }
-const initialState: SurveyState = { isShow: true };
+const initialState: SurveyState = { isShow: true, step: 'role' };
 
 const surveySlice = createSlice({
   name: "survey",
@@ -18,8 +19,11 @@ const surveySlice = createSlice({
     toggleSurvey(state) {
       state.isShow = !state.isShow;
     },
+    setStep(state, action) {
+      state.step = action.payload;
+    }
   },
 });
 
-export const { showSurvey, hideSurvey, toggleSurvey } = surveySlice.actions;
+export const { showSurvey, hideSurvey, toggleSurvey, setStep } = surveySlice.actions;
 export default surveySlice.reducer;

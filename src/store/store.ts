@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import loaderSlice from "./slices/loaderSlice";
 import surveySlice from "./slices/surveySlice";
+import overlaySlice from "./slices/overlaySlice";
 
 const store = configureStore({
   reducer: {
     loader: loaderSlice,
     survey: surveySlice,
+    overlay: overlaySlice
   },
   devTools: true,
   middleware: (getDefaultMiddleware) =>
