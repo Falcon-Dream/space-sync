@@ -5,8 +5,8 @@ import { useAppDispatch } from "@store/hook";
 
 import Image from "next/image";
 
-import styles from "./Survey.module.scss";
-import { hideSurvey } from "@store/slices/surveySlice";
+import styles from "./SurveyRole.module.scss";
+import { hideSurvey, setStep } from "@store/slices/surveySlice";
 
 type Role = "astronaut" | "scientist";
 
@@ -52,7 +52,12 @@ const SurveyRole: FC = () => {
   };
 
   const handleNextStep = () => {
-    dispatch(hideSurvey());
+    if (!localStorage.getItem('calendar')) {
+      dispatch(setStep('calendar'))
+      return;
+    } else {
+      dispatch(hideSurvey())
+    }
   };
 
   useEffect(() => {
@@ -75,14 +80,12 @@ const SurveyRole: FC = () => {
   return (
     <div className={styles.role} ref={containerRef}>
       <span
-        className={`${styles.overlay} ${
-          role != null ? styles.overlayActive : ""
-        }`}
+        className={`${styles.overlay} ${role != null ? styles.overlayActive : ""
+          }`}
       ></span>
       <div
-        className={`${styles.astronaut} ${
-          role == "astronaut" ? styles.active : ""
-        }`}
+        className={`${styles.astronaut} ${role == "astronaut" ? styles.active : ""
+          }`}
         onMouseOver={() => handleMouseOver("astronaut")}
         onMouseOut={() => !isRoleSelected && setRole(null)}
         onClick={() => handleRoleClick("astronaut")}
@@ -108,25 +111,22 @@ const SurveyRole: FC = () => {
           <span className="themeColor">{role}</span>
         </h1>
         <button
-          className={`${styles.astronautButton} themeButton ${
-            role == "astronaut" ? styles.activeButton : ""
-          }`}
+          className={`${styles.astronautButton} themeButton ${role == "astronaut" ? styles.activeButton : ""
+            }`}
           onClick={() => handleRoleClick("astronaut")}
         >
           Astronaut
         </button>
         <button
-          className={`${styles.scientistButton} themeButton ${
-            role == "scientist" ? styles.activeButton : ""
-          }`}
+          className={`${styles.scientistButton} themeButton ${role == "scientist" ? styles.activeButton : ""
+            }`}
           onClick={() => handleRoleClick("scientist")}
         >
           Scientist
         </button>
         <button
-          className={`${styles.button} themeButton ${
-            isRoleSelected ? styles.index : ""
-          }`}
+          className={`${styles.button} themeButton ${isRoleSelected ? styles.index : ""
+            }`}
           disabled={!isRoleSelected}
           onClick={handleNextStep}
         >
@@ -134,9 +134,8 @@ const SurveyRole: FC = () => {
         </button>
       </div>
       <div
-        className={`${styles.scientist} ${
-          role == "scientist" ? styles.active : ""
-        }`}
+        className={`${styles.scientist} ${role == "scientist" ? styles.active : ""
+          }`}
         onMouseOver={() => handleMouseOver("scientist")}
         onMouseOut={() => !isRoleSelected && setRole(null)}
         onClick={() => handleRoleClick("scientist")}

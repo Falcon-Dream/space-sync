@@ -3,7 +3,7 @@ import { FC, ReactNode, useEffect } from "react";
 import Loader from "@components/ui/Loader/Loader";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import { useAppDispatch } from "@store/hook";
+import { useAppDispatch, useAppSelector } from "@store/hook";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Exo_2 } from "next/font/google";
@@ -12,7 +12,7 @@ import useOnlineStatus from "@hooks/useOnlineStatus";
 import useHasWindow from "@hooks/useHasWindows";
 import LostConnection from "@components/sections/LostConnection/LostConnection";
 import Background from "@components/ui/Background/Background";
-import { hideSurvey } from "@store/slices/surveySlice";
+import { hideSurvey, setStep } from "@store/slices/surveySlice";
 
 type Props = {
   children: ReactNode;
@@ -26,14 +26,21 @@ const Exo2 = Exo_2({
 
 const Layout: FC<Props> = ({ children }) => {
   const dispatch = useAppDispatch();
+  const isOverlayShow = useAppSelector((state) => state.overlay.isShow);
 
   const isOnline = useOnlineStatus();
   const hasWindow = useHasWindow();
 
   useEffect(() => {
     setTimeout(() => {
-      if (localStorage.getItem("role")) {
-        dispatch(hideSurvey());
+      if (localStorage.getItem('role') && localStorage.getItem('calendar')) {
+        dispatch(hideSurvey())
+      }
+
+      if (!localStorage.getItem('role')) {
+        dispatch(setStep('role'))
+      } else if (!localStorage.getItem('calendar')) {
+        dispatch(setStep('calendar'))
       }
 
       dispatch(hideLoader());
@@ -49,6 +56,7 @@ const Layout: FC<Props> = ({ children }) => {
       {isOnline && hasWindow && (
         <>
           <Background smoke={true} fade={true} />
+          <div className={`overlay ${isOverlayShow ? 'overlayActive' : ''}`}></div>
           <div style={{ flex: "1 0 auto" }}>
             <Header />
             <main>{children}</main>
@@ -61,6 +69,7 @@ const Layout: FC<Props> = ({ children }) => {
         <>
           <Background smoke={true} fade={true} />
           <LostConnection />
+          <div className={`overlay ${isOverlayShow ? 'overlayActive' : ''}`}></div>
         </>
       )}
     </div>
