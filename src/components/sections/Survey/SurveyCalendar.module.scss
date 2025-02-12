@@ -1,2 +1,159 @@
 /* ---- Calendar ---- */
-@import '@resources';
+@import "@resources";
+
+.wrapper {
+  margin-top: 45px;
+}
+
+.title {
+  @include font-size(90px);
+  text-transform: uppercase;
+  max-width: 720px;
+
+  @include mq(1400) {
+    @include font-size(80px);
+  }
+
+  @include mq($tablet-large) {
+    @include font-size(70px);
+  }
+
+  @include mq(800) {
+    text-align: center;
+  }
+}
+
+.subtitle {
+  @include font-size(60px);
+  text-transform: uppercase;
+  margin-bottom: 50px;
+
+  @include mq($tablet-large) {
+    margin-bottom: 30px;
+  }
+
+  @include mq(800) {
+    text-align: center;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+
+  @include mq(800) {
+    flex-direction: column;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  @include mq(800) {
+    margin: 50px auto;
+    justify-content: center;
+  }
+}
+
+.button {
+  @include font-size(60px);
+  width: 100px;
+  height: 100px;
+  padding-top: 0;
+  margin-left: 20px;
+
+  @include mq($tablet-large) {
+    width: 80px;
+    height: 80px;
+    @include font-size(50px);
+  }
+
+  @include mq(400) {
+    @include font-size(60px);
+  }
+}
+
+.images {
+  @include flexible();
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.rocketImage {
+  display: block;
+  position: relative;
+  width: 627px;
+  height: 567px;
+
+  @include mq(1400) {
+    width: 527px;
+    height: 477px;
+  }
+
+  @include mq($laptop) {
+    width: 427px;
+    height: 387px;
+  }
+
+  @include mq(800) {
+    display: none;
+  }
+}
+
+.scientistImage {
+  display: block;
+  position: relative;
+  width: 523px;
+  height: 420px;
+
+  @include mq(1400) {
+    width: 423px;
+    height: 340px;
+  }
+
+  @include mq($laptop) {
+    width: 327px;
+    height: 277px;
+  }
+
+  @include mq(800) {
+    width: 523px;
+    height: 420px;
+    margin: 10px auto;
+  }
+
+  @include mq(600) {
+    width: 327px;
+    height: 277px;
+  }
+}
+
+.astronautImage {
+  display: block;
+  position: relative;
+  width: 523px;
+  height: 398px;
+
+  @include mq(1400) {
+    width: 423px;
+    height: 340px;
+  }
+
+  @include mq($laptop) {
+    width: 327px;
+    height: 277px;
+  }
+
+  @include mq(800) {
+    width: 523px;
+    height: 420px;
+    margin: 10px auto;
+  }
+
+  @include mq(600) {
+    width: 327px;
+    height: 277px;
+  }
+}
