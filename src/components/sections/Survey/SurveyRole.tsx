@@ -52,11 +52,11 @@ const SurveyRole: FC = () => {
   };
 
   const handleNextStep = () => {
-    if (!localStorage.getItem('calendar')) {
-      dispatch(setStep('calendar'))
+    if (!localStorage.getItem("calendar")) {
+      dispatch(setStep("calendar"));
       return;
     } else {
-      dispatch(hideSurvey())
+      dispatch(hideSurvey());
     }
   };
 
@@ -80,12 +80,14 @@ const SurveyRole: FC = () => {
   return (
     <div className={styles.role} ref={containerRef}>
       <span
-        className={`${styles.overlay} ${role != null ? styles.overlayActive : ""
-          }`}
+        className={`${styles.overlay} ${
+          role != null ? styles.overlayActive : ""
+        }`}
       ></span>
       <div
-        className={`${styles.astronaut} ${role == "astronaut" ? styles.active : ""
-          }`}
+        className={`${styles.astronaut} ${
+          role == "astronaut" ? styles.active : ""
+        }`}
         onMouseOver={() => handleMouseOver("astronaut")}
         onMouseOut={() => !isRoleSelected && setRole(null)}
         onClick={() => handleRoleClick("astronaut")}
@@ -98,7 +100,7 @@ const SurveyRole: FC = () => {
             src="/img/survey/astronaut.png"
             blurDataURL="/img/survey/astronaut.png"
             layout="fill"
-            alt="logo"
+            alt="Astronaut"
             placeholder="blur"
           />
         </button>
@@ -111,22 +113,25 @@ const SurveyRole: FC = () => {
           <span className="themeColor">{role}</span>
         </h1>
         <button
-          className={`${styles.astronautButton} themeButton ${role == "astronaut" ? styles.activeButton : ""
-            }`}
+          className={`${styles.astronautButton} themeButton ${
+            role == "astronaut" ? styles.activeButton : ""
+          }`}
           onClick={() => handleRoleClick("astronaut")}
         >
           Astronaut
         </button>
         <button
-          className={`${styles.scientistButton} themeButton ${role == "scientist" ? styles.activeButton : ""
-            }`}
+          className={`${styles.scientistButton} themeButton ${
+            role == "scientist" ? styles.activeButton : ""
+          }`}
           onClick={() => handleRoleClick("scientist")}
         >
           Scientist
         </button>
         <button
-          className={`${styles.button} themeButton ${isRoleSelected ? styles.index : ""
-            }`}
+          className={`${styles.button} themeButton ${
+            isRoleSelected ? styles.index : ""
+          }`}
           disabled={!isRoleSelected}
           onClick={handleNextStep}
         >
@@ -134,8 +139,9 @@ const SurveyRole: FC = () => {
         </button>
       </div>
       <div
-        className={`${styles.scientist} ${role == "scientist" ? styles.active : ""
-          }`}
+        className={`${styles.scientist} ${
+          role == "scientist" ? styles.active : ""
+        }`}
         onMouseOver={() => handleMouseOver("scientist")}
         onMouseOut={() => !isRoleSelected && setRole(null)}
         onClick={() => handleRoleClick("scientist")}
@@ -148,7 +154,7 @@ const SurveyRole: FC = () => {
             src="/img/survey/scientist.png"
             blurDataURL="/img/survey/scientist.png"
             layout="fill"
-            alt="logo"
+            alt="Scientist"
             placeholder="blur"
           />
         </button>
