@@ -61,6 +61,10 @@
   cursor: url("/cursors/link.cur"), pointer !important;
 }
 
+@mixin beam {
+  cursor: url("/cursors/beam.cur"), pointer !important;
+}
+
 /* -- Full Stretch -- */
 @mixin full-stretch {
   position: absolute;

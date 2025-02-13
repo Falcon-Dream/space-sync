@@ -33,16 +33,23 @@ const Layout: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (localStorage.getItem('role') && localStorage.getItem('calendar') && localStorage.getItem('planet')) {
-        dispatch(hideSurvey())
+      if (
+        localStorage.getItem("role") &&
+        localStorage.getItem("calendar") &&
+        localStorage.getItem("planet") &&
+        localStorage.getItem("name")
+      ) {
+        dispatch(hideSurvey());
       }
 
-      if (!localStorage.getItem('role')) {
-        dispatch(setStep('role'))
-      } else if (!localStorage.getItem('calendar')) {
-        dispatch(setStep('calendar'))
-      } else if (!localStorage.getItem('planet')) {
-        dispatch(setStep('planet'))
+      if (!localStorage.getItem("role")) {
+        dispatch(setStep("role"));
+      } else if (!localStorage.getItem("calendar")) {
+        dispatch(setStep("calendar"));
+      } else if (!localStorage.getItem("planet")) {
+        dispatch(setStep("planet"));
+      } else if (!localStorage.getItem("name")) {
+        dispatch(setStep("name"));
       }
 
       dispatch(hideLoader());
@@ -58,7 +65,9 @@ const Layout: FC<Props> = ({ children }) => {
       {isOnline && hasWindow && (
         <>
           <Background smoke={true} fade={true} />
-          <div className={`overlay ${isOverlayShow ? 'overlayActive' : ''}`}></div>
+          <div
+            className={`overlay ${isOverlayShow ? "overlayActive" : ""}`}
+          ></div>
           <div style={{ flex: "1 0 auto" }}>
             <Header />
             <main>{children}</main>
@@ -71,7 +80,9 @@ const Layout: FC<Props> = ({ children }) => {
         <>
           <Background smoke={true} fade={true} />
           <LostConnection />
-          <div className={`overlay ${isOverlayShow ? 'overlayActive' : ''}`}></div>
+          <div
+            className={`overlay ${isOverlayShow ? "overlayActive" : ""}`}
+          ></div>
         </>
       )}
     </div>

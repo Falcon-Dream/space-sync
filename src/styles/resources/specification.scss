@@ -11,8 +11,7 @@
     scroll-margin-top: 100px;
   }
 
-  cursor: url("/cursors/pointer.cur"),
-  auto !important;
+  cursor: url("/cursors/pointer.cur"), auto !important;
 }
 
 body,
@@ -209,17 +208,23 @@ button {
 }
 
 input {
+  @include font-size(25px);
+  @include beam();
+  font-weight: 600;
   transition: border 0.3s ease;
-  padding: 13px;
-  background: $gray-1;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid $theme-color;
 
   &::placeholder {
-    color: $gray-2;
+    color: #b1b1b1;
+    text-transform: uppercase;
   }
 
   &:focus {
     transition: border 0.3s ease;
-    border-color: $theme-color;
+    border-color: #fff;
   }
 }
 

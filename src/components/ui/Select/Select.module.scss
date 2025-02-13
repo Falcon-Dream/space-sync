@@ -20,6 +20,7 @@
 .button {
   @include font-size(37px);
   @include pointer();
+  @include transition();
   background: rgba(255, 255, 255, 0.2);
   border: 2px solid $theme-color;
   padding: 24px 24px 12px 24px;
@@ -30,7 +31,13 @@
   }
 
   &:hover {
+    @include transition();
     color: $theme-color;
+
+    & svg path {
+      @include transition();
+      stroke: $theme-color;
+    }
   }
 }
 
@@ -89,6 +96,18 @@
 }
 
 .arrow {
+  @include transition();
   width: 38px;
   height: 38px;
+  transform: rotate(-180deg);
+}
+
+.arrowActive {
+  @include transition();
+  transform: rotate(0);
+
+  & svg path {
+    @include transition();
+    stroke: $theme-color;
+  }
 }
