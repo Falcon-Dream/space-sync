@@ -20,8 +20,8 @@ const SurveyCalendar: FC = () => {
   const handleNextStep = () => {
     localStorage.setItem("calendar", calendar);
 
-    if (!localStorage.getItem("calendar")) {
-      dispatch(setStep("name"));
+    if (!localStorage.getItem("planet")) {
+      dispatch(setStep("planet"));
       return;
     } else {
       dispatch(hideSurvey());

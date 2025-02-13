@@ -33,7 +33,7 @@ const Layout: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (localStorage.getItem('role') && localStorage.getItem('calendar')) {
+      if (localStorage.getItem('role') && localStorage.getItem('calendar') && localStorage.getItem('planet')) {
         dispatch(hideSurvey())
       }
 
@@ -41,6 +41,8 @@ const Layout: FC<Props> = ({ children }) => {
         dispatch(setStep('role'))
       } else if (!localStorage.getItem('calendar')) {
         dispatch(setStep('calendar'))
+      } else if (!localStorage.getItem('planet')) {
+        dispatch(setStep('planet'))
       }
 
       dispatch(hideLoader());
