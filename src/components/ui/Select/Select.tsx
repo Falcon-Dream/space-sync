@@ -1,10 +1,9 @@
-import { FC, useState } from "react";
+import { FC, useRef, useState } from "react";
 
 import SelectArrow from "@img/select/arrow.svg";
 
 import styles from "./Select.module.scss";
-// import { toggleOverlay } from "@store/slices/overlaySlice";
-// import { useAppDispatch } from "@store/hook";
+import useClickOutside from "@hooks/useClickOutside";
 
 type Props = {
   list: string[];
@@ -23,11 +22,10 @@ const Select: FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  // const dispatch = useAppDispatch()
+  const selectRef = useRef<HTMLDivElement>(null);
 
   const toggleSelect = () => {
     setIsOpen(!isOpen);
-    // dispatch(toggleOverlay())
   };
 
   const selectItem = (item: string) => {
@@ -35,8 +33,12 @@ const Select: FC<Props> = ({
     setValue(item);
   };
 
+  useClickOutside(selectRef, isOpen, () => {
+    setIsOpen(false);
+  });
+
   return (
-    <div className={`${styles.wrapper} ${className}`}>
+    <div className={`${styles.wrapper} ${className}`} ref={selectRef}>
       <div
         className={`${styles.button} ${isOpen ? styles.buttonActive : ""}`}
         onClick={toggleSelect}
@@ -45,7 +47,9 @@ const Select: FC<Props> = ({
           <p className={`${styles.value} ${isOpen ? styles.valueActive : ""}`}>
             {!value ? placeholder : value}
           </p>
-          <div className={styles.arrow}>
+          <div
+            className={`${styles.arrow} ${isOpen ? styles.arrowActive : ""}`}
+          >
             <SelectArrow />
           </div>
         </div>
