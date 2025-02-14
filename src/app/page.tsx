@@ -6,7 +6,7 @@ import { useAppSelector } from "@store/hook";
 import { FC } from "react";
 
 const HomePage: FC = () => {
-  const isSurveyShow = useAppSelector((state) => state.survey.isShow);
+  const isSurveyShow = useAppSelector((state) => state.survey.isShow)
 
   return (
     <>

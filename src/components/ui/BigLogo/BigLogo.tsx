@@ -4,9 +4,14 @@ import Image from "next/image";
 
 import styles from "./BigLogo.module.scss";
 
-const BigLogo: FC = () => {
+type Props = {
+  className?: string;
+  callback?: any
+}
+
+const BigLogo: FC<Props> = ({ className = '', callback = () => { } }) => {
   return (
-    <Link href="/" className={styles.wrapper}>
+    <Link href="/" className={`${styles.wrapper} ${className}`} onClick={callback}>
       <Image
         src="/img/header/logo.png"
         blurDataURL="/img/header/logo.png"
