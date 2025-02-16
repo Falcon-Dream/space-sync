@@ -36,6 +36,7 @@ const Header: FC = () => {
     <header
       className={`${styles.wrapper} ${isSticky ? styles.sticky : ""}`}
       id="header"
+      style={{ zIndex: 100 }}
     >
       <div className="container">
         {!mainPages.includes(pathname) ? <BigLogo /> : (

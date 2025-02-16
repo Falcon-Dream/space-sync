@@ -11,6 +11,7 @@ type Props = {
   setValue: any;
   placeholder?: string;
   className?: string;
+  callback?: any
 };
 
 const Select: FC<Props> = ({
@@ -19,6 +20,7 @@ const Select: FC<Props> = ({
   setValue,
   placeholder = "Choose",
   className = "",
+  callback = () => { }
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -31,6 +33,7 @@ const Select: FC<Props> = ({
   const selectItem = (item: string) => {
     toggleSelect();
     setValue(item);
+    callback(item)
   };
 
   useClickOutside(selectRef, isOpen, () => {

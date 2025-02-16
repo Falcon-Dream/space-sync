@@ -10,6 +10,10 @@
     border: 2px solid $theme-color;
     background: rgba(255, 255, 255, 0);
     overflow: hidden;
+
+    @include mq(600) {
+        margin: 0 auto;
+    }
 }
 
 .image {
@@ -35,4 +39,110 @@
     @include font-size(50px);
     text-transform: uppercase;
     color: $theme-color;
+}
+
+.pencilIcon {
+    @include transition();
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    @include pointer();
+
+    & svg {
+        @include pointer();
+
+        & path {
+            @include pointer();
+        }
+    }
+
+    &:hover {
+        @include transition();
+        opacity: 0.8;
+
+        & svg path {
+            @include transition();
+            stroke: $theme-color;
+        }
+    }
+}
+
+.row {
+    @include flexible();
+
+    @include mq(600) {
+        justify-content: center;
+    }
+}
+
+.planetImage {
+    position: relative;
+    display: block;
+    width: 257px;
+    height: 257px;
+
+    @include mq(600) {
+        margin: 0 auto;
+    }
+}
+
+.container {
+    display: flex;
+
+    @include mq(600) {
+        flex-direction: column;
+    }
+}
+
+.avatar {
+    margin-right: 200px;
+
+    @include mq(600) {
+        margin-right: 0;
+        margin: 0 auto;
+    }
+}
+
+.planetTitle {
+    @include font-size(32px);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include mq(600) {
+        display: block;
+        text-align: center;
+        margin: 50px auto 30px;
+    }
+}
+
+.planetLabel {
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.calendarTitle {
+    @include font-size(52px);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+    @include mq(600) {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+.select {
+    @include font-size(37px);
+    max-width: 300px;
+
+    @include mq(600) {
+        max-width: 100%;
+    }
+}
+
+.centerRow {
+    justify-content: center;
 }

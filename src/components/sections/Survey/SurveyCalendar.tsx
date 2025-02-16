@@ -8,10 +8,11 @@ import Select from "@components/ui/Select/Select";
 import { useAppDispatch } from "@store/hook";
 import { hideSurvey, setStep } from "@store/slices/surveySlice";
 
+import calendarList from '@data/calendars.json'
+
 const SurveyCalendar: FC = () => {
   const [role, setRole] = useState<string>(null);
   const [calendar, setCalendar] = useState<string | null>(null);
-  const calendarList = ["Gregorian", "Jewish"];
 
   const dispatch = useAppDispatch();
 

@@ -97,6 +97,18 @@
   border-bottom-color: $theme-color;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .planet:hover {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+}
+
+.planetImageActive {
+  @include transition();
+  animation: slowRotate 10s linear infinite;
+}
+
 .navigationButtons {
   @include flexible();
   column-gap: 20px;
@@ -121,9 +133,16 @@
   & svg {
     @include center-element();
     @include pointer();
+    width: 41px;
+    height: 41px;
 
     & path {
       @include pointer();
+    }
+
+    @include mq($tablet) {
+      width: 30px;
+      height: 30px;
     }
   }
 
