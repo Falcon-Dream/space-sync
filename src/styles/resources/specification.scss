@@ -11,7 +11,8 @@
     scroll-margin-top: 100px;
   }
 
-  cursor: url("/cursors/pointer.cur"), auto !important;
+  cursor: url("/cursors/pointer.cur"),
+  auto !important;
 }
 
 body,
@@ -291,7 +292,7 @@ input::-webkit-inner-spin-button {
 
 /* ---- Other ---- */
 .swal2-container {
-  font-family: "__Montserrat_5db7e3", sans-serif !important;
+  font-family: 'Exo 2', 'Exo 2 Fallback' !important;
 }
 
 .swal2-styled.swal2-confirm {
@@ -305,5 +306,21 @@ input::-webkit-inner-spin-button {
 
 .swal2-icon.swal2-success [class^="swal2-success-line"][class$="long"],
 .swal2-icon.swal2-success [class^="swal2-success-line"][class$="tip"] {
+  background-color: $theme-color !important;
+}
+
+.swal2-popup {
+  background: $black-1 !important;
+  border-radius: 15px !important;
+  color: $white-1 !important;
+  border: 2px solid $theme-color !important;
+}
+
+.swal2-title {
+  text-transform: uppercase;
+}
+
+.swal2-confirm {
+  @include pointer();
   background-color: $theme-color !important;
 }

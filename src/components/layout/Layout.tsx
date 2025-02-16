@@ -70,7 +70,7 @@ const Layout: FC<Props> = ({ children }) => {
           ></div>
           <div style={{ flex: "1 0 auto" }}>
             <Header />
-            <main>{children}</main>
+            <main style={{ zIndex: 99 }}>{children}</main>
           </div>
           <Footer />
         </>

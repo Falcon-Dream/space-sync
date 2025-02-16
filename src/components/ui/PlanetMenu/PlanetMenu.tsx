@@ -39,25 +39,22 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
       <div className="container">
         <ul className={styles.tabButtons}>
           <li
-            className={`${styles.tabButton} ${
-              currentTab == "planet" ? styles.tabButtonActive : ""
-            }`}
+            className={`${styles.tabButton} ${currentTab == "planet" ? styles.tabButtonActive : ""
+              }`}
             onClick={() => handleChooseTab("planet")}
           >
             Planets
           </li>
           <li
-            className={`${styles.tabButton} ${
-              currentTab == "moon" ? styles.tabButtonActive : ""
-            }`}
+            className={`${styles.tabButton} ${currentTab == "moon" ? styles.tabButtonActive : ""
+              }`}
             onClick={() => handleChooseTab("moon")}
           >
             Moons
           </li>
           <li
-            className={`${styles.tabButton} ${
-              currentTab == "asteroid" ? styles.tabButtonActive : ""
-            }`}
+            className={`${styles.tabButton} ${currentTab == "asteroid" ? styles.tabButtonActive : ""
+              }`}
             onClick={() => handleChooseTab("asteroid")}
           >
             Asteroids
@@ -96,13 +93,12 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
           {objects &&
             objects[`${typedTab}s`].map(({ name, image }, index) => (
               <SwiperSlide
-                className={`${styles.planet} ${
-                  state == name ? styles.planetActive : ""
-                }`}
+                className={`${styles.planet} ${state == name ? styles.planetActive : ""
+                  }`}
                 key={index}
                 onClick={() => handleChoosePlanet(name)}
               >
-                <div className={styles.planetImage}>
+                <div className={`${styles.planetImage} ${state == name ? styles.planetImageActive : ""}`}>
                   <Image
                     src={image}
                     blurDataURL={image}

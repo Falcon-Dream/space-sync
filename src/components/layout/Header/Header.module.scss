@@ -1,2 +1,100 @@
 /* ---- Header ---- */
 @import "@resources";
+
+.navigation {
+    @include flexible();
+    justify-content: space-between;
+    padding: 45px 0;
+}
+
+.menu {
+    @include flexible();
+    column-gap: 30px;
+
+    @include mq(800) {
+        column-gap: 15px;
+    }
+
+    @include mq(730) {
+        @include fade(out);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #000;
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-end;
+        border-radius: 10px;
+        border: 2px solid $theme-color;
+        column-gap: 0;
+        row-gap: 15px;
+        z-index: 4;
+    }
+}
+
+.menuActive {
+    @include fade(in);
+}
+
+.menuWrapper {
+    position: relative;
+    @include transition();
+}
+
+.menuButton {
+    @include transition();
+    @include fade(out);
+    @include pointer();
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url('/img/icons/menu.svg') no-repeat center top / cover;
+    position: absolute;
+
+    @include mq(730) {
+        @include fade(in);
+        position: static;
+    }
+
+    @include mq($phablet) {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.closeMenu {
+    background: url('/img/icons/close-menu.svg') no-repeat center top / cover;
+}
+
+.item {
+    @include pointer();
+}
+
+.link {
+    @include transition();
+    @include pointer();
+    @include font-size(20px);
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &:hover {
+        @include pointer();
+        @include transition();
+        opacity: 0.8;
+    }
+}
+
+.logo {
+    width: 221px !important;
+    height: 51px !important;
+    margin: 0 !important;
+
+    @include mq($phablet) {
+        width: 150px !important;
+        height: 35px !important;
+    }
+}
+
+.active {
+    color: $theme-color;
+}
