@@ -13,6 +13,10 @@ import useHasWindow from "@hooks/useHasWindows";
 import LostConnection from "@components/sections/LostConnection/LostConnection";
 import Background from "@components/ui/Background/Background";
 import { hideSurvey, setStep } from "@store/slices/surveySlice";
+import Link from "next/link";
+import TeamIcon from "@img/icons/mini-falcon.svg";
+import HomeIcon from "@img/icons/home.svg";
+import { usePathname } from "next/navigation";
 
 type Props = {
   children: ReactNode;
@@ -30,6 +34,8 @@ const Layout: FC<Props> = ({ children }) => {
 
   const isOnline = useOnlineStatus();
   const hasWindow = useHasWindow();
+
+  const currentPath = usePathname();
 
   useEffect(() => {
     setTimeout(() => {
@@ -72,6 +78,14 @@ const Layout: FC<Props> = ({ children }) => {
             <Header />
             <main style={{ zIndex: 99 }}>{children}</main>
           </div>
+          <Link
+            href={currentPath != "/team" ? "/team" : "/"}
+            className="team-link"
+          >
+            <div className="team-icon">
+              {currentPath != "/team" ? <TeamIcon /> : <HomeIcon />}
+            </div>
+          </Link>
           <Footer />
         </>
       )}

@@ -11,8 +11,7 @@
     scroll-margin-top: 100px;
   }
 
-  cursor: url("/cursors/pointer.cur"),
-  auto !important;
+  cursor: url("/cursors/pointer.cur"), auto !important;
 }
 
 body,
@@ -275,6 +274,77 @@ input::-webkit-inner-spin-button {
   flex-grow: 1;
 }
 
+.team-link {
+  @include pointer();
+  @include transition();
+  position: fixed;
+  display: block;
+  right: 40px;
+  bottom: 40px;
+  width: 100px;
+  height: 100px;
+  z-index: 500;
+  border-radius: 50%;
+  border: 2px solid $theme-color;
+  background: $theme-color;
+  stroke: #fff;
+  fill: #fff;
+
+  &:hover {
+    @include transition();
+    background: none !important;
+
+    & svg path {
+      @include transition();
+      stroke: $theme-color !important;
+      fill: $theme-color !important;
+    }
+  }
+
+  @include mq($tablet-large) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.team-icon {
+  @include pointer();
+  @include transition();
+  @include center-element();
+  display: block;
+
+  & svg {
+    @include pointer();
+    @include transition();
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    & path {
+      @include pointer();
+      @include transition();
+      fill: $theme-color;
+    }
+
+    @include mq($tablet-large) {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .team-link:hover {
+    background: $theme-color !important;
+
+    & svg path {
+      stroke: #fff !important;
+      fill: #fff !important;
+    }
+  }
+}
+
 .aos-init,
 .next-page,
 .container {
@@ -292,7 +362,7 @@ input::-webkit-inner-spin-button {
 
 /* ---- Other ---- */
 .swal2-container {
-  font-family: 'Exo 2', 'Exo 2 Fallback' !important;
+  font-family: "Exo 2", "Exo 2 Fallback" !important;
 }
 
 .swal2-styled.swal2-confirm {

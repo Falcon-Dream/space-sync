@@ -1,103 +1,109 @@
 {
-    "planets": [
-        {
-            "type": "planet",
-            "name": "Earth",
-            "image": "/img/objects/planets/earth.png"
-        },
-        {
-            "type": "planet",
-            "name": "Mars",
-            "image": "/img/objects/planets/mars.png"
-        },
-        {
-            "type": "planet",
-            "name": "Mercury",
-            "image": "/img/objects/planets/mercury.png"
-        },
-        {
-            "type": "planet",
-            "name": "Venus",
-            "image": "/img/objects/planets/venus.png"
-        },
-        {
-            "type": "planet",
-            "name": "Jupiter",
-            "image": "/img/objects/planets/jupiter.png"
-        },
-        {
-            "type": "planet",
-            "name": "Saturn",
-            "image": "/img/objects/planets/saturn.png"
-        },
-        {
-            "type": "planet",
-            "name": "Uranus",
-            "image": "/img/objects/planets/uranus.png"
-        },
-        {
-            "type": "planet",
-            "name": "Neptune",
-            "image": "/img/objects/planets/neptune.png"
-        }
-    ],
-    "moons": [
-        {
-            "type": "moon",
-            "name": "Moon",
-            "planet": "Earth",
-            "image": "/img/objects/moons/moon.png"
-        },
-        {
-            "type": "moon",
-            "name": "Titan",
-            "planet": "Saturn",
-            "image": "/img/objects/moons/titan.png"
-        },
-        {
-            "type": "moon",
-            "name": "Europa",
-            "planet": "Jupiter",
-            "image": "/img/objects/moons/europa.png"
-        },
-        {
-            "type": "moon",
-            "name": "Phobos",
-            "planet": "Mars",
-            "image": "/img/objects/moons/phobos.png"
-        },
-        {
-            "type": "moon",
-            "name": "Triton",
-            "planet": "Neptune",
-            "image": "/img/objects/moons/triton.png"
-        }
-    ],
-    "asteroids": [
-        {
-            "type": "asteroid",
-            "name": "4 Vesta",
-            "image": "/img/objects/asteroids/4vesta.png"
-        },
-        {
-            "type": "asteroid",
-            "name": "2 Pallas",
-            "image": "/img/objects/asteroids/2pallas.png"
-        },
-        {
-            "type": "asteroid",
-            "name": "10 Hygiea",
-            "image": "/img/objects/asteroids/10hygiea.png"
-        },
-        {
-            "type": "asteroid",
-            "name": "704 Interamnia",
-            "image": "/img/objects/asteroids/704interamnia.png"
-        },
-        {
-            "type": "asteroid",
-            "name": "52 Europa",
-            "image": "/img/objects/asteroids/52europa.png"
-        }
-    ]
+  "planets": [
+    {
+      "type": "planet",
+      "name": "Earth",
+      "image": "/img/objects/earth.png"
+    },
+    {
+      "type": "planet",
+      "name": "Mars",
+      "image": "/img/objects/mars.png"
+    },
+    {
+      "type": "planet",
+      "name": "Mercury",
+      "image": "/img/objects/mercury.png"
+    },
+    {
+      "type": "planet",
+      "name": "Venus",
+      "image": "/img/objects/venus.png"
+    },
+    {
+      "type": "planet",
+      "name": "Jupiter",
+      "image": "/img/objects/jupiter.png"
+    },
+    {
+      "type": "planet",
+      "name": "Saturn",
+      "image": "/img/objects/saturn.png"
+    },
+    {
+      "type": "planet",
+      "name": "Uranus",
+      "image": "/img/objects/uranus.png"
+    },
+    {
+      "type": "planet",
+      "name": "Neptune",
+      "image": "/img/objects/neptune.png"
+    }
+  ],
+  "moons": [
+    {
+      "type": "moon",
+      "name": "Moon",
+      "planet": "Earth",
+      "image": "/img/objects/moon.png"
+    },
+    {
+      "type": "moon",
+      "name": "Titan",
+      "planet": "Saturn",
+      "image": "/img/objects/titan.png"
+    },
+    {
+      "type": "moon",
+      "name": "Europa",
+      "planet": "Jupiter",
+      "image": "/img/objects/europa.png"
+    },
+    {
+      "type": "moon",
+      "name": "Enceladus",
+      "planet": "Saturn",
+      "image": "/img/objects/enceladus.png"
+    },
+    {
+      "type": "moon",
+      "name": "Phobos",
+      "planet": "Mars",
+      "image": "/img/objects/phobos.png"
+    },
+    {
+      "type": "moon",
+      "name": "Triton",
+      "planet": "Neptune",
+      "image": "/img/objects/triton.png"
+    }
+  ],
+  "asteroids": [
+    {
+      "type": "asteroid",
+      "name": "4 Vesta",
+      "image": "/img/objects/4 vesta.png"
+    },
+    {
+      "type": "asteroid",
+      "name": "2 Pallas",
+      "image": "/img/objects/2 pallas.png"
+    },
+    {
+      "type": "asteroid",
+      "name": "10 Hygiea",
+      "image": "/img/objects/10 hygiea.png"
+    },
+    {
+      "type": "asteroid",
+      "name": "704 Interamnia",
+      "image": "/img/objects/704 interamnia.png"
+    },
+    {
+      "type": "asteroid",
+      "name": "52 Europa",
+      "image": "/img/objects/52 europa.png"
+    }
+  ]
 }
