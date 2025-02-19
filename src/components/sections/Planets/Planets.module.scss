@@ -1,0 +1,48 @@
+/* ---- Planets ---- */
+@import "@resources";
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+
+  @include mq($tablet-large) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq($phablet) {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0;
+  }
+}
+
+.item {
+  @include transition();
+  @include pointer();
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  padding-bottom: 5px;
+  border-radius: 25px;
+  &:hover {
+    @include transition();
+    color: $theme-color !important;
+    border-bottom-color: $theme-color;
+  }
+}
+
+.image {
+  @include pointer();
+  position: relative;
+  display: block;
+  width: 211px;
+  height: 211px;
+  margin: 0 auto 20px;
+}
+
+.title {
+  @include pointer();
+  @include font-size(36px);
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}

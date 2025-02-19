@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import Select from "@components/ui/Select/Select";
 import { useAppDispatch } from "@store/hook";
 import { hideSurvey, setStep } from "@store/slices/surveySlice";
 
-import calendarList from '@data/calendars.json'
+import calendarList from "@data/calendars.json";
 
 const SurveyCalendar: FC = () => {
   const [role, setRole] = useState<string>(null);
@@ -25,6 +25,7 @@ const SurveyCalendar: FC = () => {
 
     if (!localStorage.getItem("planet")) {
       dispatch(setStep("planet"));
+      window.scrollTo(0, 0);
       return;
     } else {
       dispatch(hideSurvey());

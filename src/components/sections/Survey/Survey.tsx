@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import styles from "./SurveyRole.module.scss";
 import SurveyRole from "./SurveyRole";
@@ -9,6 +9,10 @@ import SurveyName from "./SurveyName";
 
 const Survey: FC = () => {
   const currentStep = useAppSelector((state) => state.survey.step);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className={styles.wrapper} data-f={currentStep}>
