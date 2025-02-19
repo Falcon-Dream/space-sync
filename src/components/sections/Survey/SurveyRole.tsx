@@ -54,6 +54,7 @@ const SurveyRole: FC = () => {
   const handleNextStep = () => {
     if (!localStorage.getItem("calendar")) {
       dispatch(setStep("calendar"));
+      window.scrollTo(0, 0);
       return;
     } else {
       dispatch(hideSurvey());

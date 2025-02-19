@@ -11,6 +11,8 @@
     "preinstall": "npm install --platform=linux --arch=x64 --target=20x sharp@0.32.6"
   },
   "dependencies": {
+    "@internationalized/date": "3.7.0",
+    "@react-aria/i18n": "3.12.5",
     "@reduxjs/toolkit": "^2.5.1",
     "@vercel/speed-insights": "^1.1.0",
     "aos": "^2.3.4",

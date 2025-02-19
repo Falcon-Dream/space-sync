@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { FC, useState } from "react";
 
@@ -19,12 +19,13 @@ const SurveyName: FC = () => {
     localStorage.setItem("name", name);
 
     dispatch(setStep(""));
+    window.scrollTo(0, 0);
     dispatch(hideSurvey());
   };
 
   return (
     <div className={styles.wrapper} data-aos="fade-up">
-      <div className="container">
+      <form className="container">
         <h1 className={styles.title}>
           What is your <span className="themeColor">name?</span>
         </h1>
@@ -36,14 +37,14 @@ const SurveyName: FC = () => {
           onChange={(e: any) => onChange((e.target as HTMLInputElement).value)}
         />
         <button
-          type="button"
+          type="submit"
           className={`themeButton ${styles.submitButton}`}
           disabled={name == ""}
           onClick={handleNextStep}
         >
           Next
         </button>
-      </div>
+      </form>
     </div>
   );
 };

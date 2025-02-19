@@ -82,27 +82,27 @@
   "asteroids": [
     {
       "type": "asteroid",
-      "name": "4 Vesta",
+      "name": "4-Vesta",
       "image": "/img/objects/4 vesta.png"
     },
     {
       "type": "asteroid",
-      "name": "2 Pallas",
+      "name": "2-Pallas",
       "image": "/img/objects/2 pallas.png"
     },
     {
       "type": "asteroid",
-      "name": "10 Hygiea",
+      "name": "10-Hygiea",
       "image": "/img/objects/10 hygiea.png"
     },
     {
       "type": "asteroid",
-      "name": "704 Interamnia",
+      "name": "704-Interamnia",
       "image": "/img/objects/704 interamnia.png"
     },
     {
       "type": "asteroid",
-      "name": "52 Europa",
+      "name": "52-Europa",
       "image": "/img/objects/52 europa.png"
     }
   ]

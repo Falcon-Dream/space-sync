@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { FC, useState } from "react";
 
@@ -17,6 +17,7 @@ const SurveyPlanet: FC = () => {
 
     if (!localStorage.getItem("name")) {
       dispatch(setStep("name"));
+      window.scrollTo(0, 0);
       return;
     } else {
       dispatch(hideSurvey());
