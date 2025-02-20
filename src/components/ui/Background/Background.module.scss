@@ -11,7 +11,7 @@
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/img/background/stars.png") no-repeat center bottom / cover;
-  z-index: 1;
+  z-index: -2;
 }
 
 .smoke {
@@ -24,7 +24,7 @@
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/img/background/smoke.png") no-repeat center bottom / cover;
-  z-index: 1;
+  z-index: -2;
 }
 
 .fade {

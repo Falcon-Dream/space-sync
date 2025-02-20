@@ -31,6 +31,7 @@ const Exo2 = Exo_2({
 const Layout: FC<Props> = ({ children }) => {
   const dispatch = useAppDispatch();
   const isOverlayShow = useAppSelector((state) => state.overlay.isShow);
+  const isSurveyShow = useAppSelector((state) => state.survey.isShow);
 
   const isOnline = useOnlineStatus();
   const hasWindow = useHasWindow();
@@ -78,14 +79,16 @@ const Layout: FC<Props> = ({ children }) => {
             <Header />
             <main style={{ zIndex: 99 }}>{children}</main>
           </div>
-          <Link
-            href={currentPath != "/team" ? "/team" : "/"}
-            className="team-link"
-          >
-            <div className="team-icon">
-              {currentPath != "/team" ? <TeamIcon /> : <HomeIcon />}
-            </div>
-          </Link>
+          {!isSurveyShow && (
+            <Link
+              href={currentPath != "/team" ? "/team" : "/"}
+              className="team-link"
+            >
+              <div className="team-icon">
+                {currentPath != "/team" ? <TeamIcon /> : <HomeIcon />}
+              </div>
+            </Link>
+          )}
           <Footer />
         </>
       )}

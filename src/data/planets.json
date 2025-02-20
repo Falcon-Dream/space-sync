@@ -3,42 +3,122 @@
     {
       "type": "planet",
       "name": "Earth",
-      "image": "/img/objects/earth.png"
+      "image": "/img/objects/earth.png",
+      "duration": {
+        "year": 365.25,
+        "day": 1
+      },
+      "discovery": {
+        "year": 1,
+        "month": 1,
+        "day": 1
+      },
+      "description": "Earth is the third planet from the Sun and the only known world to harbor life. With vast oceans, towering mountains, and sprawling forests, this blue planet is home to an incredible diversity of ecosystems. Its atmosphere, rich in oxygen and nitrogen, supports life while also creating dynamic weather patterns. Earth’s molten core generates a protective magnetic field, shielding it from harmful solar radiation. Tectonic activity and natural phenomena such as hurricanes, earthquakes, and volcanic eruptions continually reshape the landscape. This thriving and ever-changing planet remains a source of endless scientific discovery."
     },
     {
       "type": "planet",
       "name": "Mars",
-      "image": "/img/objects/mars.png"
+      "image": "/img/objects/mars.png",
+      "discovery": {
+        "year": 1610,
+        "month": 1,
+        "day": 1
+      },
+      "duration": {
+        "year": 687,
+        "day": 1.025
+      },
+      "description": "Mars is the fourth planet from the sun and has a distinct rusty red appearance and two unusual moons. The Red Planet is a cold, desert world within our solar system. It has a very thin atmosphere, but the dusty, lifeless (as far as we know it) planet is far from dull. Phenomenal dust storms can grow so large they engulf the entire planet, temperatures can get so cold that carbon dioxide in the atmosphere condenses directly into snow or frost, and marsquakes — a Mars version of an earthquake — regularly shake things up. Therefore, it is no surprise that this little red rock continues to intrigue scientists and is one of the most explored bodies in the solar system, according to NASA Science. "
     },
     {
       "type": "planet",
       "name": "Mercury",
-      "image": "/img/objects/mercury.png"
+      "image": "/img/objects/mercury.png",
+      "duration": {
+        "year": 88,
+        "day": 58.66666667
+      },
+      "discovery": {
+        "year": 1610,
+        "month": 1,
+        "day": 1
+      },
+      "description": "Mercury is the closest planet to the Sun and the smallest in our solar system. This rocky world is a land of extremes, with scorching daytime temperatures high enough to melt lead and frigid nights that plunge far below freezing. With almost no atmosphere to trap heat, the surface undergoes dramatic temperature shifts. Mercury is also heavily cratered, bearing the scars of countless asteroid impacts over billions of years. Despite its harsh conditions, this tiny planet continues to intrigue astronomers, revealing secrets about the early formation of the solar system."
     },
     {
       "type": "planet",
       "name": "Venus",
-      "image": "/img/objects/venus.png"
+      "image": "/img/objects/venus.png",
+      "duration": {
+        "year": 224.7,
+        "day": 243
+      },
+      "discovery": {
+        "year": 1610,
+        "month": 1,
+        "day": 1
+      },
+      "description": "Venus is often called Earth’s twin due to its similar size, but the resemblance ends there. This scorching world is shrouded in thick clouds of sulfuric acid, trapping heat in a runaway greenhouse effect that makes it the hottest planet in our solar system. Surface temperatures are hot enough to melt metal, and crushing atmospheric pressure would flatten most spacecraft. Despite these harsh conditions, Venus experiences hurricane-like winds and volcanic landscapes, making it a mysterious and extreme world that scientists continue to study."
     },
     {
       "type": "planet",
       "name": "Jupiter",
-      "image": "/img/objects/jupiter.png"
+      "image": "/img/objects/jupiter.png",
+      "discovery": {
+        "year": 1610,
+        "month": 1,
+        "day": 1
+      },
+      "duration": {
+        "year": 4333,
+        "day": 0.41357916667
+      },
+      "description": "Jupiter, the largest planet in the solar system, is a gas giant with a massive, swirling atmosphere. Its most famous feature, the Great Red Spot, is a raging storm larger than Earth that has persisted for centuries. With no solid surface, Jupiter is a churning mass of hydrogen and helium, enveloping a deep, mysterious core. This behemoth planet also boasts a vast system of moons, including Europa, which may harbor a subsurface ocean capable of supporting life. Jupiter’s immense gravity plays a crucial role in shaping the solar system, acting as a cosmic shield against asteroids and comets."
     },
     {
       "type": "planet",
       "name": "Saturn",
-      "image": "/img/objects/saturn.png"
+      "image": "/img/objects/saturn.png",
+      "discovery": {
+        "year": 1610,
+        "month": 1,
+        "day": 1
+      },
+      "duration": {
+        "year": 10756,
+        "day": 0.44583333
+      },
+      "description": "Saturn is the jewel of the solar system, famous for its breathtaking rings made of ice and rock particles. This gas giant, the second-largest planet, has a dense atmosphere filled with swirling storms and powerful winds. Though its rings steal the spotlight, Saturn’s diverse moons—such as Titan, which has lakes of liquid methane—make it one of the most fascinating planets to study. With its stunning appearance and complex system of rings and moons, Saturn continues to be a primary target for space exploration."
     },
     {
       "type": "planet",
       "name": "Uranus",
-      "image": "/img/objects/uranus.png"
+      "image": "/img/objects/uranus.png",
+      "discovery": {
+        "year": 1781,
+        "month": 3,
+        "day": 13
+      },
+      "duration": {
+        "year": 30687,
+        "day": 0.7083
+      },
+      "description": "Uranus is a unique ice giant with a pale blue-green hue due to methane in its atmosphere. Unlike other planets, it rotates on its side, likely due to a massive collision in its past. This tilted world experiences extreme seasons that last for decades. Winds whip across its frigid atmosphere at astonishing speeds, and faint rings encircle the planet. Despite being one of the least explored planets, Uranus holds many secrets about the outer solar system and its mysterious dynamics."
     },
     {
       "type": "planet",
       "name": "Neptune",
-      "image": "/img/objects/neptune.png"
+      "image": "/img/objects/neptune.png",
+      "discovery": {
+        "year": 1846,
+        "month": 9,
+        "day": 25
+      },
+      "duration": {
+        "year": 60190,
+        "day": 0.6667
+      },
+      "description": "Neptune, the most distant planet in the solar system, is a cold, windy giant with deep blue hues. This ice giant is home to the fastest winds in the solar system, reaching speeds over 1,500 mph. The planet’s stormy atmosphere contains swirling clouds and a dark storm system similar to Jupiter’s Great Red Spot. Neptune’s largest moon, Triton, orbits in the opposite direction of the planet’s rotation, hinting at a dramatic history. Even from its distant location, Neptune continues to captivate scientists searching for insights into our solar system’s outermost reaches."
     }
   ],
   "moons": [
@@ -46,64 +126,174 @@
       "type": "moon",
       "name": "Moon",
       "planet": "Earth",
-      "image": "/img/objects/moon.png"
+      "image": "/img/objects/moon.png",
+      "discovery": {
+        "year": 1,
+        "month": 1,
+        "day": 1
+      },
+      "duration": {
+        "year": 365.25,
+        "day": 27.3217
+      },
+      "description": "Earth’s Moon is the only natural satellite of our planet and a silent witness to billions of years of cosmic history. Its barren, cratered landscape has been shaped by meteor impacts and volcanic activity. With no atmosphere to protect it, temperatures swing from blistering heat to freezing cold. The Moon plays a crucial role in Earth’s tides and stabilizes its rotation. As humanity’s first step beyond Earth, the Moon remains a symbol of exploration and a potential gateway to deeper space travel."
     },
     {
       "type": "moon",
       "name": "Titan",
       "planet": "Saturn",
-      "image": "/img/objects/titan.png"
+      "image": "/img/objects/titan.png",
+      "discovery": {
+        "year": 1655,
+        "month": 3,
+        "day": 25
+      },
+      "duration": {
+        "year": 10756,
+        "day": 15.9167
+      },
+      "description": "Titan, Saturn’s largest moon, is a world shrouded in thick, golden-hued clouds. Beneath its dense atmosphere, liquid methane and ethane form rivers, lakes, and seas, creating an eerie yet Earth-like landscape. Titan’s frigid surface hides a possible subsurface ocean, making it one of the most promising locations for discovering extraterrestrial life. With a dynamic climate and complex organic chemistry, Titan is a prime target for future exploration"
     },
     {
       "type": "moon",
       "name": "Europa",
       "planet": "Jupiter",
-      "image": "/img/objects/europa.png"
+      "image": "/img/objects/europa.png",
+      "discovery": {
+        "year": 1610,
+        "month": 1,
+        "day": 8
+      },
+      "duration": {
+        "year": 4333,
+        "day": 3.5
+      },
+      "description": "Europa, one of Jupiter’s most intriguing moons, is a frozen world with a surface covered in cracked ice. Beneath this icy shell, a vast, salty ocean may harbor the conditions necessary for life. Jupiter’s immense gravitational pull causes tidal flexing, generating heat and keeping Europa’s subsurface ocean in a liquid state. This mysterious moon, with its potential for alien life, is a high-priority target for upcoming space missions."
     },
     {
       "type": "moon",
       "name": "Enceladus",
       "planet": "Saturn",
-      "image": "/img/objects/enceladus.png"
+      "image": "/img/objects/enceladus.png",
+      "discovery": {
+        "year": 1789,
+        "month": 8,
+        "day": 28
+      },
+      "duration": {
+        "year": 10756,
+        "day": 1.370833
+      },
+      "description": "Enceladus is a tiny, icy moon of Saturn that has captured scientific attention due to its powerful geysers. These jets of water vapor and ice particles erupt from beneath the moon’s surface, hinting at a subsurface ocean that could harbor life. The icy shell is marked with fractures, suggesting ongoing geological activity. With its striking surface and the potential for habitability, Enceladus remains one of the most intriguing destinations in the search for extraterrestrial life."
     },
     {
       "type": "moon",
       "name": "Phobos",
       "planet": "Mars",
-      "image": "/img/objects/phobos.png"
+      "image": "/img/objects/phobos.png",
+      "discovery": {
+        "year": 1877,
+        "month": 8,
+        "day": 18
+      },
+      "duration": {
+        "year": 687,
+        "day": 0.31891023
+      },
+      "description": "Phobos, the larger of Mars’ two moons, is a small and irregularly shaped body that orbits dangerously close to the planet. Its heavily cratered surface and deep grooves suggest a violent past, possibly caused by impacts or tidal forces. Phobos is slowly spiraling toward Mars and is expected to crash into the planet or break apart in the distant future. Despite its small size, this tiny moon remains an important subject of study for understanding the evolution of planetary moons."
     },
     {
       "type": "moon",
       "name": "Triton",
       "planet": "Neptune",
-      "image": "/img/objects/triton.png"
+      "image": "/img/objects/triton.png",
+      "discovery": {
+        "year": 1846,
+        "month": 10,
+        "day": 10
+      },
+      "duration": {
+        "year": 60190,
+        "day": 5.876854
+      },
+      "description": "Triton, Neptune’s largest moon, is a strange world with an unusual retrograde orbit, meaning it moves in the opposite direction of Neptune’s rotation. This suggests Triton was likely captured from the Kuiper Belt. The icy surface features geysers that spew nitrogen gas, hinting at active geological processes beneath its frozen crust. Triton’s distant and alien landscape makes it a fascinating object of study for planetary scientists."
     }
   ],
   "asteroids": [
     {
       "type": "asteroid",
       "name": "4-Vesta",
-      "image": "/img/objects/4 vesta.png"
+      "image": "/img/objects/4 vesta.png",
+      "discovery": {
+        "year": 1807,
+        "month": 3,
+        "day": 29
+      },
+      "duration": {
+        "year": 1325.86,
+        "day": 0.22
+      },
+      "description": "Vesta is one of the largest asteroids in the solar system and a survivor from the early days of planetary formation. Its surface is a patchwork of deep craters and mountainous terrain, offering clues about the violent history of our solar system. Unlike most asteroids, Vesta has a differentiated structure similar to a planet, with a core, mantle, and crust. This massive rock, orbiting between Mars and Jupiter, continues to be a valuable window into planetary evolution."
     },
     {
       "type": "asteroid",
       "name": "2-Pallas",
-      "image": "/img/objects/2 pallas.png"
+      "image": "/img/objects/2 pallas.png",
+      "discovery": {
+        "year": 1802,
+        "month": 3,
+        "day": 28
+      },
+      "duration": {
+        "year": 1684,
+        "day": 0.32555
+      },
+      "description": "Pallas is one of the biggest asteroids in the asteroid belt and has an unusually tilted orbit, making it one of the most dynamic objects in its region. Its heavily cratered surface hints at a long history of cosmic collisions. Scientists believe Pallas could be a remnant of an early planetesimal, providing a unique opportunity to study the conditions of the early solar system."
     },
     {
       "type": "asteroid",
       "name": "10-Hygiea",
-      "image": "/img/objects/10 hygiea.png"
+      "image": "/img/objects/10 hygiea.png",
+      "discovery": {
+        "year": 1849,
+        "month": 4,
+        "day": 12
+      },
+      "duration": {
+        "year": 2033.8,
+        "day": 0.57625
+      },
+      "description": "Hygiea is the fourth-largest asteroid in the belt and is nearly spherical, making it a candidate for a dwarf planet. Unlike its rocky counterparts, Hygiea has a surface rich in carbonaceous material, hinting at a primitive composition. This distant world, with its dark surface and slow rotation, holds secrets about the formation of the solar system’s smaller bodies."
     },
     {
       "type": "asteroid",
       "name": "704-Interamnia",
-      "image": "/img/objects/704 interamnia.png"
+      "image": "/img/objects/704 interamnia.png",
+      "discovery": {
+        "year": 1910,
+        "month": 10,
+        "day": 2
+      },
+      "duration": {
+        "year": 1951,
+        "day": 0.3629
+      },
+      "description": "Interamnia is one of the largest asteroids, though it remains mysterious due to its dark, shadowy surface. Little is known about this distant space rock, but its composition suggests it may have once been part of a larger celestial body. As one of the last uncharted asteroids of its size, Interamnia continues to intrigue astronomers."
     },
     {
       "type": "asteroid",
       "name": "52-Europa",
-      "image": "/img/objects/52 europa.png"
+      "image": "/img/objects/52 europa.png",
+      "discovery": {
+        "year": 1858,
+        "month": 2,
+        "day": 4
+      },
+      "duration": {
+        "year": 1989,
+        "day": 0.2345
+      },
+      "description": "Europa, not to be confused with Jupiter’s moon, is an asteroid with a complex history of impacts and fragmentation. With a surface reflecting traces of metal and rock, it may provide insights into how asteroids evolve over time. Its irregular shape and rotation add to the mysteries surrounding this celestial wanderer."
     }
   ]
 }
