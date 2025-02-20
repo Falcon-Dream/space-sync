@@ -19,6 +19,8 @@ const Header: FC = () => {
     window.addEventListener("scroll", () => {
       setIsSticky(window.scrollY > 0 ? true : false);
     });
+
+    console.log(typeof pathname.split("/").slice(1)[1]);
   }, []);
 
   const toggleMenu = () => {
@@ -34,12 +36,11 @@ const Header: FC = () => {
     <header
       className={`${styles.wrapper} ${isSticky ? styles.sticky : ""}`}
       id="header"
-      style={{ zIndex: 100 }}
+      style={{ zIndex: 100, position: "relative" }}
     >
       <div className="container">
-        {!mainPages.includes(pathname) ? (
-          <BigLogo />
-        ) : (
+        {mainPages.includes(pathname) ||
+        typeof pathname.split("/").slice(1)[1] == "string" ? (
           <div className={styles.navigation}>
             <BigLogo className={styles.logo} callback={anchorHandleClick} />
             <div
@@ -96,6 +97,10 @@ const Header: FC = () => {
                     href="/planets"
                     className={`${styles.link} ${
                       pathname == "/planets" ? styles.active : ""
+                    } ${
+                      typeof pathname.split("/").slice(1)[1] == "string"
+                        ? styles.active
+                        : ""
                     }`}
                     onClick={anchorHandleClick}
                   >
@@ -116,6 +121,8 @@ const Header: FC = () => {
               </ul>
             </div>
           </div>
+        ) : (
+          <BigLogo />
         )}
       </div>
     </header>
