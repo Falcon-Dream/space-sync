@@ -3,9 +3,10 @@
 
 .wrapper {
   margin-top: 50px;
-}
 
-.content {
+  @include mq($phablet) {
+    margin-top: 0;
+  }
 }
 
 .image {
@@ -52,21 +53,65 @@
 }
 
 .row {
-  @include flexible();
-  column-gap: 50px;
+  // @include flexible();
+  // column-gap: 50px;
+  // margin-top: 10px;
+
+  // @include mq(860) {
+  //   flex-direction: column;
+  //   align-items: flex-start;
+  //   row-gap: 20px;
+  //   column-gap: 0;
+  // }
+
+  // @include mq($phablet) {
+  //   justify-content: center;
+  //   align-items: center;
+  //   text-align: center;
+  // }
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
   margin-top: 10px;
 
-  @include mq(650) {
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 20px;
-    column-gap: 0;
+  @include mq($laptop) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include mq($phablet) {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+}
+
+.discovery {
+  @include font-size(20px);
+  margin-top: 20px;
+
+  & b {
+    font-weight: 600;
+    color: $theme-color;
+  }
+
+  & br {
+    display: none;
+  }
+
+  & span {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @include mq($phablet) {
+    display: block;
+    text-align: center;
+
+    & br {
+      display: block;
+    }
   }
 }
 
@@ -94,4 +139,8 @@
 
 .button {
   margin-top: 30px;
+
+  @include mq($phablet) {
+    margin: 30px auto 0;
+  }
 }
