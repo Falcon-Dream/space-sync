@@ -11,12 +11,17 @@
     scroll-margin-top: 100px;
   }
 
-  cursor: url("/cursors/pointer.cur"), auto !important;
+  cursor: url("/cursors/pointer.cur"),
+  auto !important;
 }
 
 body,
 html {
   height: 100%;
+}
+
+.over {
+  position: static !important
 }
 
 body {

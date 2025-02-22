@@ -11,6 +11,10 @@ import formatTime from "@helpers/planets/formatTime";
 import formatDate from "@helpers/planets/formatDate";
 import { formatUTCDateTime } from "@helpers/planets/formatDateTime";
 import Link from "next/link";
+import getMaxHourInPlanetDay from "@helpers/planets/getMaxHourInPlanetDay";
+import getMaxMinuteInPlanetHour from "@helpers/planets/getMaxMinuteInPlanetHour";
+import getMaxDaysInPlanetYear from "@helpers/planets/getMaxDaysInPlanetYear";
+import formatDiscoveryDate from "@helpers/planets/formatDiscoveryDate";
 
 type Props = {
   planet: string;
@@ -73,7 +77,18 @@ const Planet: FC<Props> = ({ planet }) => {
               <h3 className={styles.subtitle}>Time on the planet:</h3>
               <p className={styles.time}>{date && currentTime}</p>
             </div>
+            <div className={styles.column}>
+              <h3 className={styles.subtitle}>Length of the day:</h3>
+              <p className={styles.time}>{getMaxHourInPlanetDay(planetData)} h {getMaxMinuteInPlanetHour(planetData)} m</p>
+            </div>
+            <div className={styles.column}>
+              <h3 className={styles.subtitle}>Length of the year:</h3>
+              <p className={styles.time}>{getMaxDaysInPlanetYear(planetData)} days</p>
+            </div>
           </div>
+          <p className={styles.discovery}>
+            <b>Discovery Date:</b> <br /> {formatDiscoveryDate(planetData)} <span>(Earth)</span>
+          </p>
           <p className={styles.description}>{planetData.description}</p>
           <Link href="/planets" className={`${styles.button} themeButton`}>
             Back

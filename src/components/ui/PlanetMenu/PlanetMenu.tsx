@@ -11,6 +11,7 @@ import PreviousIcon from "@img/icons/previous.svg";
 import NextIcon from "@img/icons/next.svg";
 
 import styles from "./PlanetMenu.module.scss";
+import { usePathname } from "next/navigation";
 
 type ObjectKeys = "planet" | "moon" | "asteroid";
 
@@ -26,6 +27,8 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
 
   const typedTab = currentTab as ObjectKeys;
 
+  const pathname = usePathname();
+
   const handleChooseTab = (tab: string) => {
     setCurrentTab(tab);
   };
@@ -36,25 +39,30 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className="container">
-        <ul className={styles.tabButtons}>
+      <div
+        className={`container ${pathname == "/sync" ? styles.background : ""}`}
+      >
+        <ul className={`${styles.tabButtons}`}>
           <li
-            className={`${styles.tabButton} ${currentTab == "planet" ? styles.tabButtonActive : ""
-              }`}
+            className={`${styles.tabButton} ${
+              currentTab == "planet" ? styles.tabButtonActive : ""
+            }`}
             onClick={() => handleChooseTab("planet")}
           >
             Planets
           </li>
           <li
-            className={`${styles.tabButton} ${currentTab == "moon" ? styles.tabButtonActive : ""
-              }`}
+            className={`${styles.tabButton} ${
+              currentTab == "moon" ? styles.tabButtonActive : ""
+            }`}
             onClick={() => handleChooseTab("moon")}
           >
             Moons
           </li>
           <li
-            className={`${styles.tabButton} ${currentTab == "asteroid" ? styles.tabButtonActive : ""
-              }`}
+            className={`${styles.tabButton} ${
+              currentTab == "asteroid" ? styles.tabButtonActive : ""
+            }`}
             onClick={() => handleChooseTab("asteroid")}
           >
             Asteroids
@@ -69,12 +77,10 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
             swiperRef.current = swiper;
           }}
           breakpoints={{
-            // when window width is >= 320px
             320: {
               slidesPerView: 1,
               spaceBetween: 20,
             },
-            // when window width is >= 480px
             480: {
               slidesPerView: 2,
               spaceBetween: 30,
@@ -82,7 +88,6 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
             800: {
               slidesPerView: 3,
             },
-            // when window width is >= 640px
             1200: {
               slidesPerView: 4,
               spaceBetween: 40,
@@ -93,12 +98,17 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
           {objects &&
             objects[`${typedTab}s`].map(({ name, image }, index) => (
               <SwiperSlide
-                className={`${styles.planet} ${state == name ? styles.planetActive : ""
-                  }`}
+                className={`${styles.planet} ${
+                  state == name ? styles.planetActive : ""
+                }`}
                 key={index}
                 onClick={() => handleChoosePlanet(name)}
               >
-                <div className={`${styles.planetImage} ${state == name ? styles.planetImageActive : ""}`}>
+                <div
+                  className={`${styles.planetImage} ${
+                    state == name ? styles.planetImageActive : ""
+                  }`}
+                >
                   <Image
                     src={image}
                     blurDataURL={image}
