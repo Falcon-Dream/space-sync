@@ -21,7 +21,7 @@ const Header: FC = () => {
     });
 
     console.log(typeof pathname.split("/").slice(1)[1]);
-  }, []);
+  }, [pathname]);
 
   const toggleMenu = () => {
     // document.body.classList.toggle('lock-scroll');
