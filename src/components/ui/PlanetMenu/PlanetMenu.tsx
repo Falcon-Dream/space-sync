@@ -11,6 +11,7 @@ import PreviousIcon from "@img/icons/previous.svg";
 import NextIcon from "@img/icons/next.svg";
 
 import styles from "./PlanetMenu.module.scss";
+import { usePathname } from "next/navigation";
 
 type ObjectKeys = "planet" | "moon" | "asteroid";
 
@@ -26,6 +27,8 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
 
   const typedTab = currentTab as ObjectKeys;
 
+  const pathname = usePathname()
+
   const handleChooseTab = (tab: string) => {
     setCurrentTab(tab);
   };
@@ -36,8 +39,8 @@ const PlanetMenu: FC<Props> = ({ state, setState, onSubmit }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className="container">
-        <ul className={styles.tabButtons}>
+      <div className={`container ${pathname == '/sync' ? styles.background : ''}`}>
+        <ul className={`${styles.tabButtons}`}>
           <li
             className={`${styles.tabButton} ${currentTab == "planet" ? styles.tabButtonActive : ""
               }`}
