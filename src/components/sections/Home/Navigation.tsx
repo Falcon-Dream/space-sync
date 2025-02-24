@@ -35,9 +35,9 @@ const Navigation: FC = () => {
           </span>
         </li>
       </Link>
-      <Link href="/meetings">
+      <Link href="/converter">
         <li className={`${styles.item} themeButton`}>
-          <p className={styles.text}>Meetings</p>
+          <p className={styles.text}>Converter</p>
           <span className={styles.icon}>
             <MeetingIcon />
           </span>

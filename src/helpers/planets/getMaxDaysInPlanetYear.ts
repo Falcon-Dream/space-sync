@@ -7,7 +7,9 @@ const getMaxDaysInPlanetYear = (planet: IPlanet) => {
 
   const maxDays = durationYearInSeconds / durationDayInSeconds;
 
-  return Math.floor(maxDays);
-}
+  return planet.name == "Venus"
+    ? Number(maxDays.toFixed(2))
+    : Math.floor(maxDays);
+};
 
-export default getMaxDaysInPlanetYear
+export default getMaxDaysInPlanetYear;

@@ -31,11 +31,11 @@ const convertPlanetTimeToAnotherPlanetTime = (
   const targetSecond = targetHourRemainder % 60;
 
   return {
-    year: targetYear + 1,
-    day: targetDay + 1,
-    hour: targetHour + 1,
-    minute: targetMinute,
-    second: targetSecond,
+    year: Math.floor(targetYear + 1),
+    day: Math.floor(targetDay + 1),
+    hour: Math.floor(targetHour + 1),
+    minute: Math.floor(targetMinute),
+    second: Math.floor(targetSecond),
   };
 };
 

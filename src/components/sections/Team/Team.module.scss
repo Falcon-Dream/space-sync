@@ -205,6 +205,8 @@
 
 .linkItem {
   @include flexible();
+  align-items: center;
+  justify-content: center;
 }
 
 .linkTitle {
@@ -222,6 +224,8 @@
   @include pointer();
   font-weight: 600;
   color: $theme-color;
+  text-align: center;
+  display: block;
 
   &:hover {
     @include pointer();

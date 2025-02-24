@@ -13,7 +13,13 @@ const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const pathname = usePathname();
-  const mainPages = ["/profile", "/planets", "/meetings", "/sync"];
+  const mainPages = [
+    "/profile",
+    "/planets",
+    "/meetings",
+    "/sync",
+    "/converter",
+  ];
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -72,13 +78,13 @@ const Header: FC = () => {
                 </li>
                 <li className={styles.item}>
                   <Link
-                    href="/meetings"
+                    href="/converter"
                     className={`${styles.link} ${
-                      pathname == "/meetings" ? styles.active : ""
+                      pathname == "/converter" ? styles.active : ""
                     }`}
                     onClick={anchorHandleClick}
                   >
-                    Meetings
+                    Converter
                   </Link>
                 </li>
                 <li className={styles.item}>

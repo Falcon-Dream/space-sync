@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import Swal from "sweetalert2";
 
@@ -13,19 +12,19 @@ const Team: FC = () => {
     const teamInfo: any = {
       nick: {
         title: "Mykola Korzhykov",
-        text: "Mykola info",
+        text: "I am a senior student at Armstrong High School originally from Ukraine. I moved to the United States, Minnesota in 2023. In grade 12, I registered for a project in NASA Hunch and chose a couple of classmates with whom I would further develop SpaceSync. I also invited my cousin to the project who developed the UX / UI design for the application. My role in this project was the project manager, as well as one of the main developers of the Front-End part of the web application. I distributed tasks between each team member, monitored the progress of the application development, monitored the deadlines, and also developed the application.",
       },
       vance: {
         title: "Vance Schaefer",
-        text: "Vance info",
+        text: "I am in 12th grade. I wanted to gain more professional experience in development. In this project i was a developer helping a little with the front end. I have lots of experience in python and API development but this project i was able to learn new frameworks for development.",
       },
       sebas: {
         title: "Sebastian Perez Delgado",
-        text: "Sebastian info",
+        text: "I'm a student of AP Computer Science at Armstrong High School. I was born in Maracaibo, Venezuela; I lived in Venezuela until my late 14s. I am a senior (12th grade student) at Armstrong, and I have been living in Minnesota since 2021. I got into the project when my classmates invited me to the NASA HUNCH project of software. My role in the project is to investigate how other calendars work; research data that will be used for our calculations; add citations; find and test formulas that could be used for our calculations. This is my first experience with this kind of project, so I was give the task of researching and analysing.",
       },
       maksym: {
         title: "Maksym Dublii",
-        text: "Maksym info",
+        text: "I am 14 years old, I am from Ukraine and currently studying at Sandburg Middle School. In this project, I am a Web UX/UI Designer. I joined this project thanks to my cousin Mykola, who needed someone to design a website. Next year, I will be studying at Armstrong High School, and I plan to continue working on this project throughout high school. This project has given me the opportunity to grow in the field of web design, and I intend to keep working in this field in the future.",
       },
     };
 
@@ -182,19 +181,95 @@ const Team: FC = () => {
           Ultimately, we will resolve all the challenges we encountered by
           creating <span>universal solutions.</span>
         </p>
+        <h2 className={styles.subtitle}>Example of formula</h2>
+        <p className={styles.description}>
+          <>
+            Jupiter as reference: we will find the date in Jupiter. <br />
+            <br />
+            Seconds have passed on earth since 1610, January 1 ={" "}
+            <span>13099730910 seconds</span> <br />
+            <br /> 13099730910 / 374371200 ={" "}
+            <span>34.9912891537 Jupiter year</span> <br /> <br />
+            Using the mod operator, we find the remainder of the year, this will
+            be used to find the current day. 371110110 <span>seconds</span>{" "}
+            <br />
+            <br />
+            Use those seconds to divide them by the number of seconds we have in
+            a Jupiter day. 371110110 / 35733.24 = 10385.5712496{" "}
+            <span>current Jupiter day</span>
+            <br />
+            <br />
+            We use mod operator to find the remainder of the day:
+            <br />
+            <span>20412.600000023842 seconds</span> <br />
+            <br />
+            Then, we find the hour (converting seconds to hours).
+            20412.600000023842 / 3600 = <span>5.67016666667</span> <br />
+            <br /> We use the mod operator to find the remainder of the hour
+            (minute). <span>2412.600000023842</span>
+            <br /> <br />
+            Then, we divide them by 60 to find the minute. 2412.600000023842 /
+            60 = <span>40.2100000004</span> <br /> <br />
+            Then, we use the mod operator to find the seconds after the minutes.
+            <br />
+            <span>12.600000023841858</span>
+          </>
+        </p>
+        <h2 className={styles.subtitle}>Current Jupiter Date</h2>
+        <br />
+        <p className={styles.description}>
+          Year: <span>34</span>
+          <br />
+          Day: <span>10385</span>
+          <br />
+          Hour: <span>5</span>
+          <br />
+          Minute: <span>40</span>
+          <br />
+          Second: <span>12</span>
+          <br />
+        </p>
         <h2 className={styles.subtitle}>Links</h2>
         <ul className={styles.links}>
           <li className={styles.linkItem}>
-            <p className={styles.linkTitle}>Name</p>
-            <Link href="/" className={styles.link}>
-              Link
-            </Link>
+            <p className={styles.linkTitle}>SpaceSync Source (GitHub)</p>
+            <a
+              href="https://github.com/Falcon-Dream/space-sync"
+              target="_blank"
+              className={styles.link}
+            >
+              *Click*
+            </a>
           </li>
           <li className={styles.linkItem}>
-            <p className={styles.linkTitle}>Name</p>
-            <Link href="/" className={styles.link}>
-              Link
-            </Link>
+            <p className={styles.linkTitle}>Research Data</p>
+            <a
+              href="https://docs.google.com/document/d/18hBxOOAEKAy2GEDBHfSd3QcJ0tdZMj_6mdSKCT7luuc/edit?usp=sharing"
+              target="_blank"
+              className={styles.link}
+            >
+              *Click*
+            </a>
+          </li>
+          <li className={styles.linkItem}>
+            <p className={styles.linkTitle}>Virtual Presentation</p>
+            <a
+              href="https://docs.google.com/presentation/d/1pjbo2UzpSmh48rofyeGso2SrXlV7M43bgp5AhbXe400/edit?usp=sharing"
+              target="_blank"
+              className={styles.link}
+            >
+              *Click*
+            </a>
+          </li>
+          <li className={styles.linkItem}>
+            <p className={styles.linkTitle}>Brochure</p>
+            <a
+              href="https://docs.google.com/document/d/1W0ldYQUHnZMQD9MAKAcg3w_rHQzi_jmpR2mBVkigkxk/edit?usp=sharing"
+              target="_blank"
+              className={styles.link}
+            >
+              *Click*
+            </a>
           </li>
         </ul>
         <div className={styles.card}>

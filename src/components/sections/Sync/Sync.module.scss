@@ -197,15 +197,24 @@
 
 .info {
   margin-top: 5px;
+
+  & br {
+    display: none;
+  }
 }
 
 .infoTitle {
   @include font-size(18px);
   color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  display: block;
+  margin-top: 10px;
 }
 
 .infoDesc {
   @include font-size(15px);
   color: rgba(255, 255, 255, 0.5);
   text-decoration: underline;
+  text-align: center;
+  display: block;
 }
