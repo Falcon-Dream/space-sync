@@ -15,7 +15,12 @@ const convertEarthDateToPlanetTime = (planet: IPlanet, earthDate: any) => {
     Date.UTC(discoveryYear, discoveryMonth - 1, discoveryDay, 0, 0, 0)
   );
 
-  const differenceInSeconds = Math.floor((earthDate - referenceDate) / 1000);
+  const differenceInSeconds = Math.floor(
+    (earthDate.getTime() -
+      earthDate.getTimezoneOffset() * 60000 -
+      referenceDate) /
+      1000
+  );
 
   const planetYear = differenceInSeconds / durationYearInSeconds;
   const planetYearRemainder = differenceInSeconds % durationYearInSeconds;

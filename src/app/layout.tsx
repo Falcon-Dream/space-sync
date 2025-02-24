@@ -2,8 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Exo_2 } from "next/font/google";
 
 import "aos/dist/aos.css";
-import 'swiper/css';
+import "swiper/css";
 import "@styles/global.scss";
+import "headless-react-datepicker/dist/styles.css";
+
 import { FC, ReactNode } from "react";
 
 import ProviderLayout from "@components/layout/ProviderLayout";

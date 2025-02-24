@@ -1,0 +1,211 @@
+/* ---- Converter ---- */
+@import "@resources";
+
+.wrapper {
+  margin-top: 50px;
+}
+
+.row {
+  @include flexible();
+  justify-content: space-between;
+
+  @include mq($tablet-large) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+  }
+}
+
+.planet {
+  width: 454px;
+
+  @include mq(1300) {
+    width: 300px;
+  }
+}
+
+.button {
+  @include transition();
+  @include pointer();
+  position: relative;
+  width: 454px;
+  height: 454px;
+  border-radius: 50%;
+  border: 9px dashed $theme-color;
+  display: block;
+  margin: 0 auto;
+
+  &:hover {
+    @include transition();
+    background: $theme-color;
+
+    & svg {
+      @include transition();
+      @include pointer();
+    }
+
+    & path {
+      @include transition();
+      @include pointer();
+      stroke: #fff;
+    }
+  }
+
+  @include mq(1300) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @include mq($tablet-large) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.image {
+  @include transition();
+  @include pointer();
+}
+
+.active {
+  @include transition();
+  border-color: rgba(0, 0, 0, 0);
+
+  &:hover {
+    @include transition();
+    opacity: 0.8;
+  }
+}
+
+.menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #010218;
+  z-index: 1000;
+  padding-top: 100px;
+}
+
+.title {
+  @include font-size(56px);
+  @include flexible();
+  display: block;
+  color: $theme-color;
+  font-weight: 600;
+  margin: 20px 0;
+  text-transform: uppercase;
+  text-align: center;
+
+  & span {
+    @include font-size(25px);
+    color: #fff;
+  }
+}
+
+.content {
+  @include font-size(30px);
+  @include transition;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 15px;
+}
+
+.contentEdit {
+  @include transition;
+  @include pointer();
+  padding: 10px;
+  border-color: $theme-color;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  & p {
+    @include pointer();
+  }
+
+  &:hover {
+    @include transition();
+    background: $theme-color;
+
+    & p {
+      @include transition();
+      color: #000;
+    }
+  }
+}
+
+.date {
+  display: block;
+  text-align: center;
+}
+
+.time {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.switchWrapper {
+  @include fade(out);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+
+.switch {
+  @include pointer();
+  @include transition();
+  margin-bottom: 10px;
+
+  & div {
+    @include pointer();
+  }
+
+  &:hover {
+    @include transition();
+    opacity: 0.8;
+  }
+}
+
+.showSwitch {
+  @include fade(in);
+  position: static;
+}
+
+.switchLabel {
+  @include font-size(30px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.info {
+  margin-top: 5px;
+
+  & br {
+    display: none;
+  }
+}
+
+.infoTitle {
+  @include font-size(18px);
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.infoDesc {
+  @include font-size(15px);
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  text-align: center;
+}
+
+.calendarButton {
+  margin-top: 10px;
+}
